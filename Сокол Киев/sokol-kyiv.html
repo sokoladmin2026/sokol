@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СОКОЛ КИЇВ — Кабельно-провідникова та електромонтажна продукція</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0D1B2A;
+    --navy2:   #152638;
+    --blue:    #1A4A7A;
+    --orange:  #E85D04;
+    --orange2: #F48C06;
+    --steel:   #8FA3B1;
+    --light:   #EDF2F7;
+    --white:   #FFFFFF;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body:    'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--navy); color: var(--light); line-height: 1.6; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,42,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em;
+    color: var(--white); text-decoration: none;
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--steel); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--orange); color: var(--white);
+    border: none; padding: 0.5rem 1.25rem; border-radius: 2px;
+    font-family: var(--font-body); font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange2); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 5% 60px;
+    gap: 4rem;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 70% 50%, rgba(26,74,122,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  /* diagonal stripe accent */
+  #hero::after {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--orange), transparent);
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1rem;
+    border-left: 3px solid var(--orange); padding-left: 0.75rem;
+  }
+  .hero-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 900; line-height: 1.0;
+    color: var(--white); text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  .hero-h1 .accent { color: var(--orange); }
+  .hero-sub {
+    font-size: 1.15rem; color: var(--steel);
+    max-width: 480px; margin: 1.25rem 0 2rem;
+    line-height: 1.65;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 2px;
+    font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange2); transform: translateY(-1px); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.25); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 2px;
+    font-weight: 600; font-size: 0.9rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--white); }
+
+  /* hero image grid */
+  .hero-images {
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px;
+    gap: 10px; position: relative;
+  }
+  .hero-images img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 2px; filter: brightness(0.85) contrast(1.05);
+  }
+  .hero-images img:first-child {
+    grid-column: 1 / 3; height: 240px;
+  }
+  .img-placeholder {
+    background: var(--navy2);
+    border: 2px dashed rgba(232,93,4,0.4);
+    border-radius: 2px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.5rem; color: var(--steel);
+    font-size: 0.8rem; text-align: center; padding: 1rem;
+  }
+  .img-placeholder svg { opacity: 0.4; }
+  .hero-badge {
+    position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%);
+    background: var(--orange); color: var(--white);
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.5rem 1.5rem; white-space: nowrap; border-radius: 2px;
+  }
+
+  /* ── STATS ── */
+  #stats {
+    background: var(--blue);
+    padding: 3rem 5%;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; border-top: 3px solid var(--orange);
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem; font-weight: 900;
+    color: var(--white); line-height: 1;
+  }
+  .stat-num span { color: var(--orange); }
+  .stat-label {
+    font-size: 0.8rem; color: var(--steel);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  /* ── SECTIONS common ── */
+  section { padding: 80px 5%; }
+  .section-label {
+    font-family: var(--font-display);
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 0.75rem;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 900; text-transform: uppercase;
+    color: var(--white); line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .section-h2 .accent { color: var(--orange); }
+  .divider {
+    width: 48px; height: 3px;
+    background: var(--orange); margin-bottom: 1.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--navy2);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  #about p { color: var(--steel); margin-bottom: 1rem; font-size: 1rem; }
+  .about-features {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 1.5rem;
+  }
+  .feature-chip {
+    background: rgba(26,74,122,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px; padding: 0.75rem 1rem;
+    font-size: 0.85rem; color: var(--light);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .feature-chip::before {
+    content: ''; display: block;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0;
+  }
+  .about-img-block {
+    position: relative;
+  }
+  .about-img-block img {
+    width: 100%; border-radius: 2px;
+    filter: brightness(0.8) contrast(1.1);
+  }
+  .about-img-block .img-placeholder {
+    height: 380px;
+  }
+  .about-tag {
+    position: absolute; bottom: 16px; left: 16px;
+    background: var(--orange); color: var(--white);
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.4rem 0.9rem; border-radius: 2px;
+  }
+  .requisites {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.25rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem;
+  }
+  .req-item { font-size: 0.82rem; color: var(--steel); }
+  .req-item strong { color: var(--light); display: block; font-size: 0.9rem; }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--navy); }
+  .equip-list { display: flex; flex-direction: column; gap: 2px; margin-top: 2.5rem; }
+  .equip-item {
+    display: grid; grid-template-columns: 1fr 320px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 2px; overflow: hidden;
+    background: var(--navy2); transition: border-color 0.2s;
+  }
+  .equip-item:hover { border-color: rgba(232,93,4,0.4); }
+  .equip-item:nth-child(even) { grid-template-columns: 320px 1fr; }
+  .equip-item:nth-child(even) .equip-body { order: 2; }
+  .equip-item:nth-child(even) .equip-img  { order: 1; }
+  .equip-body { padding: 2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .equip-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .equip-body h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--white); text-transform: uppercase; line-height: 1.1; margin-bottom: 0.75rem; }
+  .equip-body p { font-size: 0.92rem; color: var(--steel); line-height: 1.6; max-width: 480px; }
+  .equip-img { height: 220px; overflow: hidden; position: relative; }
+  .equip-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) contrast(1.05); transition: transform 0.4s; }
+  .equip-item:hover .equip-img img { transform: scale(1.04); }
+  .equip-img .img-placeholder { height: 220px; }
+  @media (max-width: 700px) {
+    .equip-item, .equip-item:nth-child(even) { grid-template-columns: 1fr; }
+    .equip-img, .equip-img .img-placeholder { height: 180px; }
+    .equip-body { padding: 1.25rem; }
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .product-card.wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+  }
+  .product-card.wide .product-card-img {
+    height: 100%;
+  }
+  .product-card.wide .product-card-img .img-placeholder {
+    height: 100%;
+    min-height: 180px;
+  }
+  .product-card {
+    background: var(--navy2);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 2px; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(232,93,4,0.5);
+  }
+  .product-card-img {
+    height: 200px; overflow: hidden;
+  }
+  .product-card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.85);
+  }
+  .product-card-img .img-placeholder { height: 200px; }
+  .product-card-body { padding: 1.25rem; }
+  .product-card-tag {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 0.5rem;
+  }
+  .product-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .product-card p { font-size: 0.88rem; color: var(--steel); line-height: 1.55; }
+
+  /* ── WHY US ── */
+  #why {
+    background: var(--navy2);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .why-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .why-item {
+    display: grid; grid-template-columns: 48px 1fr;
+    gap: 1rem; align-items: start;
+  }
+  .why-icon {
+    width: 48px; height: 48px; border-radius: 2px;
+    background: rgba(232,93,4,0.15);
+    border: 1px solid rgba(232,93,4,0.3);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .why-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.8; }
+  .why-item h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+  .why-item p { font-size: 0.88rem; color: var(--steel); }
+  .why-visual {
+    position: relative; padding-top: 0;
+  }
+  .why-visual img { width: 100%; border-radius: 2px; filter: brightness(0.75) contrast(1.1); }
+  .why-visual .img-placeholder { height: 400px; }
+  .why-quote {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--orange); color: var(--white);
+    font-family: var(--font-display); font-size: 1rem;
+    font-weight: 700; line-height: 1.2; text-transform: uppercase;
+    padding: 1rem 1.25rem; max-width: 220px; border-radius: 2px;
+  }
+
+  /* ── BRANDS ── */
+  #brands {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 60px 5%;
+  }
+  .brands-label {
+    text-align: center; font-size: 0.78rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--steel); margin-bottom: 2rem;
+  }
+  .brands-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .brand-chip {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 1.4rem; letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.2);
+    transition: color 0.2s;
+  }
+  .brand-chip:hover { color: rgba(255,255,255,0.6); }
+  .brand-chip.highlight { color: rgba(255,255,255,0.45); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .contact-info { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .contact-row svg {
+    width: 20px; height: 20px; stroke: var(--orange); fill: none;
+    stroke-width: 1.8; flex-shrink: 0; margin-top: 2px;
+  }
+  .contact-row span { color: var(--light); font-size: 0.95rem; line-height: 1.5; }
+  .contact-row a { color: var(--light); text-decoration: none; }
+  .contact-row a:hover { color: var(--orange); }
+  .contact-form {
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 2px; padding: 2rem;
+  }
+  .contact-form h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.3rem; text-transform: uppercase;
+    color: var(--white); margin-bottom: 1.5rem;
+  }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block; font-size: 0.78rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--steel); margin-bottom: 0.4rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px; color: var(--white);
+    font-family: var(--font-body); font-size: 0.95rem;
+    padding: 0.7rem 0.9rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--orange); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-submit {
+    width: 100%; background: var(--orange); color: var(--white);
+    border: none; padding: 0.85rem; border-radius: 2px;
+    font-family: var(--font-body); font-weight: 700;
+    font-size: 0.9rem; letter-spacing: 0.08em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--orange2); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080F17;
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 1.2rem; color: var(--white);
+  }
+  .footer-logo span { color: var(--orange); }
+  footer p { font-size: 0.8rem; color: var(--steel); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding-top: 90px; }
+    .hero-images { order: -1; grid-template-columns: 1fr 1fr; }
+    .hero-images img:first-child { grid-column: 1 / 3; }
+    #stats { grid-template-columns: repeat(2, 1fr); }
+    #about, #why, #contact { grid-template-columns: 1fr; gap: 2.5rem; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .about-features { grid-template-columns: 1fr; }
+    .requisites { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    #stats { grid-template-columns: repeat(2, 1fr); }
+    .products-grid { grid-template-columns: 1fr; }
+    .hero-images { grid-template-columns: 1fr; }
+    .hero-images img:first-child { grid-column: 1; }
+    .brands-row { gap: 1.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">СОКОЛ <span>КИЇВ</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Про нас</a></li>
+    <li><a href="#products">Продукція</a></li>
+    <li><a href="#why">Переваги</a></li>
+    <li><a href="#contact">Контакти</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Зв'язатись</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <h1 class="hero-h1">
+      Кабельно-<br>
+      <span class="accent">провідникова</span><br>
+      продукція
+    </h1>
+    <p class="hero-sub">
+      Широкий асортимент кабельно-провідникової та електромонтажної продукції для житлового, комерційного та промислового будівництва. 
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#products">Переглянути продукцію</a>
+      <a class="btn-outline" href="#contact">Отримати консультацію</a>
+    </div>
+  </div>
+
+  <div class="hero-images">
+    <div style="grid-column:1/3; height:240px;">
+      <img src="кабель каналов\photo_5337080869623110596_y.jpg">
+    </div>
+    <div>
+      <img src="гофротрубы\photo_5337080869623110349_m.jpg">
+    </div>
+    <div>
+      <img src="гофротрубы\photo_5337080869623110353_x.jpg">
+    </div>
+    <div class="hero-badge">Комплексне рішення для електромонтажу</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stat">
+    <div class="stat-num">2018<span></span></div>
+    <div class="stat-label">Рік заснування</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6<span>+</span></div>
+    <div class="stat-label">Категорій продукції</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">24<span>/7</span></div>
+    <div class="stat-label">Технічна підтримка</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">ТИСЯЧІ</div>
+    <div class="stat-label">Задоволених клієнтів</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-label">Про компанію</div>
+    <h2 class="section-h2">ТОВ «СОКОЛ <span class="accent">КИЇВ»</span></h2>
+    <div class="divider"></div>
+    <p>
+      SOKOL Київ пропонує широкий асортимент кабельно-провідникової та електромонтажної продукції для житлового, комерційного та промислового будівництва.
+    </p>
+    <p>
+      Ми поєднуємо перевірені технології та продукцію провідних світових виробників, забезпечуючи комплексне рішення для монтажу електричних мереж.
+    </p>
+    <p>
+      SOKOL Київ — це комплексні рішення для професійного електромонтажу: від кабелю до систем його захисту та кріплення. Ми допомагаємо реалізовувати проєкти будь-якої складності, гарантуючи надійність, безпеку та довговічність електричних мереж.
+    </p>
+    <div class="about-features">
+      <div class="feature-chip">Стабільна якість</div>
+      <div class="feature-chip">Постійна наявність на складах</div>
+      <div class="feature-chip">Технічна підтримка</div>
+      <div class="feature-chip">Комплексний асортимент</div>
+      <div class="feature-chip">Оптимальна ціна / якість</div>
+      <div class="feature-chip">Швидка доставка по Україні</div>
+    </div>
+  </div>
+  <div class="about-img-block">
+      <img src="оборудование/4.png">
+    <div class="about-tag">SOKOL КИЇВ</div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-label">Наша продукція</div>
+  <h2 class="section-h2">Кабельно-провідникова та <span class="accent">електромонтажна</span> продукція</h2>
+  <div class="divider"></div>
+
+  <style>
+    /* Product gallery cards */
+    .prod-list { display: flex; flex-direction: column; gap: 3rem; margin-top: 2.5rem; }
+
+    .prod-item {
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 2px; overflow: hidden;
+      background: var(--navy2); transition: border-color 0.2s;
+    }
+    .prod-item:hover { border-color: rgba(232,93,4,0.4); }
+
+    .prod-header {
+      padding: 1.75rem 2rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .prod-tag {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 0.4rem;
+    }
+    .prod-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--white); text-transform: uppercase;
+      line-height: 1.1; margin-bottom: 0.6rem;
+    }
+    .prod-header p { font-size: 0.92rem; color: var(--steel); line-height: 1.6; max-width: 700px; }
+
+    /* Photo gallery strip */
+    .prod-gallery {
+      display: flex; gap: 4px; overflow-x: auto;
+      padding: 0; scrollbar-width: thin;
+      scrollbar-color: var(--orange) transparent;
+    }
+    .prod-gallery::-webkit-scrollbar { height: 4px; }
+    .prod-gallery::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+    .prod-photo {
+      flex: 0 0 280px; height: 280px;
+      overflow: hidden; position: relative;
+    }
+    .prod-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: brightness(0.85) contrast(1.05);
+      transition: transform 0.4s;
+    }
+
+    .prod-photo .img-placeholder {
+      height: 210px; flex-shrink: 0;
+      border-radius: 0; border: none;
+      border-right: 2px dashed rgba(232,93,4,0.3);
+    }
+
+    @media (max-width: 700px) {
+      .prod-photo { flex: 0 0 220px; height: 170px; }
+      .prod-photo .img-placeholder { height: 170px; }
+      .prod-header { padding: 1.25rem; }
+    }
+  </style>
+
+  <div class="prod-list">
+
+    <!-- 1. Гофротруба -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <h3>ПВХ гофротруба</h3>
+        <p>Гофротруба власного виробництва для захисту електропроводки під час відкритого та прихованого монтажу. Висока міцність, стійкість до механічних пошкоджень та УФ-випромінювання.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="гофротрубы\photo_5337080869623110349_m.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="гофротрубы\гофротруба.jfif">
+        </div>
+        <div class="prod-photo">
+            <img src="гофротрубы\photo_5337080869623110354_y.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="гофротрубы\Nt9qJUqv6GT9ldcRX5GLbE9wkXGOMYQIyvEpdGAD.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="гофротрубы\photo_5337080869623110352_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="гофротрубы\photo_5337080869623110353_x.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Ізоляційна стрічка -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <h3>Ізоляційна стрічка</h3>
+        <p>Ізоляційна стрічка SOKOL Київ — для професійної ізоляції, маркування та монтажу електричних з'єднань. Відмінна адгезія, висока діелектрична міцність, широкий температурний діапазон.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="изоленты\izolyatsijna-strichka-sinya-19-mm-h-10-m-mustang-main-1500x1500.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="изоленты\photo_5337080869623110368_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="изоленты\133697.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="изоленты\5213986261_w200_h200_klejkaya-lenta-pvh.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="изоленты\2VR1510.700x800.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="изоленты\IMG_1902-600x600.jfif">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Кабельно-провідникова продукція -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <div class="prod-tag">Електромонтаж</div>
+        <h3>Кабельно-провідникова продукція</h3>
+        <p>Силові, монтажні та спеціалізовані кабелі для різних сфер застосування: житлове та комерційне будівництво, промислові об'єкти, інженерні системи.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110516_y.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110515_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110514_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110518_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110519_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабельно-проводниковая\photo_5337080869623110523_y.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Кабельні канали -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <div class="prod-tag">Електромонтаж</div>
+        <h3>Кабельні канали</h3>
+        <p>Сучасні рішення для акуратного та безпечного прокладання кабельних трас. Чіткі геометричні форми, легкий монтаж, естетичний зовнішній вигляд — для офісів, житла та виробничих приміщень.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110550_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110551_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110552_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110553_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110554_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110555_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110556_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110557_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="кабель каналов\photo_5337080869623110558_x.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Металорукав РЗЦ-П -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <div class="prod-tag">Захист кабелів · Промисловий</div>
+        <h3>Металорукав РЗЦ-П</h3>
+        <p>Металорукав у ПВХ-оболонці РЗЦ-П — надійний механічний захист кабелів у промислових та комерційних об'єктах. Захищає від механічних пошкоджень, вологи та агресивних середовищ.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="металлорукав РЗЦП\photo_5337080869623110627_m.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="металлорукав РЗЦП\images.jfif">
+        </div>
+        <div class="prod-photo">
+            <img src="металлорукав РЗЦП\photo_5337080869623110628_x.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="металлорукав РЗЦП\images_virtuemart_product_resized_metallorukav__pvh__200x200.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="металлорукав РЗЦП\rzcp1.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Металорукав РЗЦ -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <div class="prod-tag">Захист кабелів · Промисловий</div>
+        <h3>Металорукав РЗЦ</h3>
+        <p>Металорукав РЗЦ — класичний варіант механічного захисту кабельних ліній. Застосовується в промислових, комерційних та житлових об'єктах там, де потрібен надійний захист від зовнішніх впливів.</p>
+      </div>
+      <div class="prod-gallery">
+        <div class="prod-photo">
+            <img src="металорукав РЗЦ\569al-846x653.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="металорукав РЗЦ\658348141.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="металорукав РЗЦ\zeta42417.jpg">
+        </div>
+        <div class="prod-photo">
+            <img src="металорукав РЗЦ\5446842059_metallorukav-otsinkovannyj-s.700x800.jpg.webp">
+        </div>
+        <div class="prod-photo">
+            <img src="металорукав РЗЦ\de88e2be755397855efd7b1a5455b109.png">
+        </div>
+      </div>
+    </div>
+    
+    <!-- 7. Монтажні коробки -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <h3>Монтажні коробки</h3>
+        <p>Монтажні коробки SOKOL Київ призначені для безпечного розміщення та з'єднання електропроводки під час відкритого й прихованого монтажу. Виготовлені з якісного ударостійкого пластику, вони забезпечують надійну фіксацію електрофурнітури, стійкість до механічних навантажень і тривалий термін експлуатації.</p>
+      </div>
+
+      <div class="prod-gallery">
+        <div class="prod-photo">
+          <img src="монтажные коробки\photo_5346236988278905223_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="монтажные коробки\photo_5346236988278905224_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="монтажные коробки\photo_5346236988278905225_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="монтажные коробки\photo_5346236988278905226_y.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Скоби -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <h3>Монтажні коробки</h3>
+        <p>Монтажні коробки SOKOL Київ призначені для безпечного розміщення та з'єднання електропроводки під час відкритого й прихованого монтажу. Виготовлені з якісного ударостійкого пластику, вони забезпечують надійну фіксацію електрофурнітури, стійкість до механічних навантажень і тривалий термін експлуатації.</p>
+      </div>
+
+      <div class="prod-gallery">
+        <div class="prod-photo">
+          <img src="скобы\photo_5346236988278905628_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="скобы\photo_5346236988278905629_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="скобы\photo_5346236988278905630_y.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="скобы\photo_5346236988278905631_y.jpg">
+        </div>
+        <div class="prod-photo">
+          <img src="скобы\photo_5346236988278905634_y.jpg">
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. оборудование -->
+    <div class="prod-item">
+      <div class="prod-header">
+        <h3>Виробниче обладнання</h3>
+    <p>Продукція SOKOL Київ виготовляється на сучасному обладнанні для литтєвого формування з використанням прецизійних прес-форм. Це дозволяє контролювати геометрію та якість кожної деталі на всіх етапах виробництва, забезпечуючи стабільні характеристики продукції та відповідність технічним вимогам.</p>
+      </div>
+
+      <div class="prod-gallery">
+        <div class="prod-photo">
+          <img src="оборудование\1.jpg">
+        </div>
+
+        <div class="prod-photo">
+          <img src="оборудование\2.png">
+        </div>
+
+        <div class="prod-photo">
+          <img src="оборудование\3.png">
+        </div>
+
+        <div class="prod-photo">
+          <img src="оборудование\4.png">
+        </div>
+        <div class="prod-photo">
+          <img src="оборудование\6.png">
+        </div>
+        <div class="prod-photo">
+          <img src="оборудование\7.png">
+        </div>
+        <div class="prod-photo">
+          <img src="оборудование\8.png">
+        </div>
+        <div class="prod-photo">
+          <img src="оборудование\9.png">
+        </div>
+        <div class="prod-photo">
+          <img src="оборудование\10.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div>
+    <div class="section-label">Чому обирають нас</div>
+    <h2 class="section-h2">Наші <span class="accent">переваги</span></h2>
+    <div class="divider"></div>
+    <ul class="why-list">
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div>
+          <h4>Швидка доставка по всій Україні</h4>
+          <p>Налагоджена логістика дозволяє оперативно доставляти замовлення в будь-яку точку країни, дотримуючись узгоджених термінів.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h4>Постійна наявність на складах</h4>
+          <p>Широкий асортимент завжди у наявності. Оперативне відвантаження без зайвих затримок.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        </div>
+        <div>
+          <h4>Стабільна якість</h4>
+          <p>Сучасне виробниче обладнання та вхідний контроль якості гарантують стабільні характеристики кожної партії продукції.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div>
+          <h4>Комплексний асортимент</h4>
+          <p>Все необхідне для електромонтажу в одному місці: від кабелю до систем захисту та кріплення. Закриваємо потребу повністю.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Професійна технічна підтримка</h4>
+          <p>Допомагаємо підібрати оптимальне рішення під конкретний об'єкт. Консультуємо на всіх етапах — від вибору до монтажу.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Оптимальне співвідношення ціни та якості</h4>
+          <p>Прямі поставки дозволяють пропонувати конкурентні ціни без втрати якості продукції.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="why-visual">
+    <div style="position:relative; overflow:hidden; border-radius:2px; margin-top:1rem;">
+      <img src="оборудование/7.png" style="width:100%; height:100%; min-height:400px; object-fit:cover; display:block; filter:brightness(0.75);">
+      <div class="why-quote">Від кабелю до систем захисту — комплексне рішення</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-label">Зв'язатися з нами</div>
+    <h2 class="section-h2">Контактна <span class="accent">інформація</span></h2>
+    <div class="divider"></div>
+    <div class="contact-info">
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>49000, Україна, Дніпропетровська обл.,<br>місто Дніпро, вул. Сімферопольська, буд. 21, кім. 604</span>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.64 16z"/></svg>
+        <span><a href="tel:+380983345184">098-334-51-84</a></span>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><a href="mailto:ooosokolkiev@gmail.com">ooosokolkiev@gmail.com</a></span>
+      </div>
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Код ЄДРПОУ: <strong>42594341</strong><br>Дата заснування: 05.11.2018</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form">
+      <h3>Залишити заявку</h3>
+
+      <form action="https://formsubmit.co/ooosokolkiev@gmail.com" method="POST">
+
+          <!-- Настройки FormSubmit -->
+          <input type="hidden" name="_subject" value="Нова заявка з сайту SOKOL Київ">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <!-- Антиспам -->
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="form-group">
+              <label for="name">Ваше ім'я</label>
+              <input
+                  id="name"
+                  name="Ім'я"
+                  type="text"
+                  placeholder="Іван Петренко"
+                  required>
+          </div>
+
+          <div class="form-group">
+              <label>Телефон або Email для зворотного зв'язку</label>
+              <input
+                  id="contact"
+                  name="Контакт"
+                  type="text"
+                  placeholder="+380 XX XXX XX XX або example@gmail.com"
+                  required>
+          </div>
+
+          <div class="form-group">
+              <label for="message">Повідомлення</label>
+              <textarea
+                  id="message"
+                  name="Повідомлення"
+                  placeholder="Опишіть потребу або вкажіть необхідну продукцію..."
+                  rows="5"
+                  required>
+              </textarea>
+          </div>
+
+          <button class="form-submit" type="submit">
+              Надіслати заявку
+          </button>
+
+      </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">СОКОЛ <span>КИЇВ</span></div>
+  <p>© 2024 ТОВ «Сокол Київ». Код ЄДРПОУ 42594341</p>
+  <p style="font-size:0.75rem; color:#444f5a;">49000, Дніпро, вул. Сімферопольська, 21/604</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ІМПУЛЬС — Сучасні електротехнічні технології</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #F5F7FA;
+    --bg2:      #FFFFFF;
+    --navy:     #0F1C3F;
+    --navy2:    #1A2E5A;
+    --blue:     #2563EB;
+    --blue2:    #3B82F6;
+    --accent:   #F59E0B;
+    --accent2:  #FCD34D;
+    --muted:    #64748B;
+    --border:   #E2E8F0;
+    --text:     #1E293B;
+    --white:    #FFFFFF;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body:    'Plus Jakarta Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    box-shadow: 0 1px 12px rgba(15,28,63,0.06);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-mark svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2.2; }
+  .nav-logo-name {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.15rem; color: var(--navy); letter-spacing: -0.01em;
+  }
+  .nav-logo-name span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--blue); color: var(--white);
+    padding: 0.55rem 1.4rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.88rem;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+  }
+  .nav-cta:hover { background: var(--navy); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    padding: 110px 5% 80px;
+    background: var(--white);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  /* subtle dot grid */
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, #CBD5E1 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.5; pointer-events: none;
+  }
+  /* blue gradient blob */
+  #hero::after {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(37,99,235,0.08);
+    border: 1px solid rgba(37,99,235,0.2);
+    border-radius: 100px; padding: 0.35rem 1rem;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 1.5rem;
+  }
+  .hero-tag .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--blue);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 700; line-height: 1.08;
+    color: var(--navy); margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+  h1 .highlight {
+    color: var(--blue); position: relative;
+  }
+  h1 .highlight::after {
+    content: '';
+    position: absolute; bottom: 2px; left: 0; right: 0;
+    height: 3px; border-radius: 2px;
+    background: var(--accent); opacity: 0.7;
+  }
+  .hero-desc {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 440px; line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+  .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-blue {
+    background: var(--blue); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-weight: 700; font-size: 0.9rem;
+    text-decoration: none; transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+    display: inline-block;
+  }
+  .btn-blue:hover { background: var(--navy); box-shadow: none; }
+  .btn-line {
+    background: transparent; color: var(--navy);
+    border: 1.5px solid var(--border);
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-line:hover { border-color: var(--navy); }
+  .hero-trust {
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.82rem; color: var(--muted); font-weight: 500;
+  }
+  .trust-item svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; }
+
+  /* hero right */
+  .hero-right { position: relative; z-index: 1; }
+  .hero-img-main {
+    border-radius: 16px; overflow: hidden;
+    height: 380px; position: relative;
+    box-shadow: 0 20px 60px rgba(15,28,63,0.12);
+  }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+  .img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 0.5rem; color: var(--muted);
+    font-size: 0.82rem; text-align: center; padding: 1rem;
+    border: 2px dashed rgba(37,99,235,0.2);
+    border-radius: 16px;
+  }
+  .img-placeholder svg { opacity: 0.4; }
+  .hero-card-float {
+    position: absolute; bottom: -20px; left: -20px;
+    background: var(--white); border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 8px 32px rgba(15,28,63,0.12);
+    display: flex; align-items: center; gap: 0.75rem;
+    min-width: 200px;
+  }
+  .float-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(245,158,11,0.12);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .float-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; }
+  .float-text strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--navy); }
+  .float-text span { font-size: 0.75rem; color: var(--muted); }
+  .hero-card-float2 {
+    position: absolute; top: 20px; right: -16px;
+    background: var(--navy); border-radius: 10px;
+    padding: 0.75rem 1rem; color: var(--white);
+    box-shadow: 0 8px 24px rgba(15,28,63,0.25);
+  }
+  .float2-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--accent2); line-height: 1; }
+  .float2-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--navy);
+    padding: 2.5rem 5%;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .sbar-item { text-align: center; }
+  .sbar-num {
+    font-family: var(--font-display); font-size: 2.4rem;
+    font-weight: 700; color: var(--white); line-height: 1;
+  }
+  .sbar-num span { color: var(--accent2); }
+  .sbar-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; letter-spacing: 0.05em; }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 90px 5%; background: var(--bg);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .section-tag {
+    display: inline-block;
+    background: rgba(37,99,235,0.08);
+    color: var(--blue); border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 700; color: var(--navy);
+    line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .blue-bar { width: 36px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 1.5rem; }
+  #about p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 0.9rem; }
+  .about-pills {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem;
+  }
+  .pill {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 100px; padding: 0.35rem 0.9rem;
+    font-size: 0.82rem; font-weight: 600; color: var(--navy);
+    display: flex; align-items: center; gap: 0.35rem;
+  }
+  .pill::before { content: '✓'; color: var(--blue); font-size: 0.75rem; font-weight: 700; }
+  .req-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(15,28,63,0.05);
+  }
+  .req-card h4 {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 1rem;
+  }
+  .req-row {
+    display: flex; justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .req-row:last-child { border-bottom: none; }
+  .req-row .rk { color: var(--muted); }
+  .req-row .rv { color: var(--navy); font-weight: 600; }
+  .about-img-wrap {
+    border-radius: 16px; overflow: hidden;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(15,28,63,0.1);
+  }
+  .about-img-wrap img { width: 100%; display: block; }
+  .about-img-wrap .img-placeholder { height: 420px; border-radius: 16px; }
+  .about-badge {
+    position: absolute; bottom: 1.25rem; right: 1.25rem;
+    background: var(--white); border-radius: 10px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 20px rgba(15,28,63,0.1);
+    font-size: 0.82rem; font-weight: 700; color: var(--navy);
+    text-align: center;
+  }
+  .about-badge span { display: block; color: var(--blue); font-size: 1.3rem; line-height: 1; }
+
+  /* ── PRODUCTS ── */
+  #products { padding: 90px 5%; background: var(--white); }
+  .prod-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 2.5rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .prod-top p { font-size: 0.88rem; color: var(--muted); max-width: 300px; text-align: right; }
+  .equip-list { display: flex; flex-direction: column; gap: 12px; }
+  .equip-item {
+    display: grid; grid-template-columns: 1fr 300px;
+    border-radius: 12px; overflow: hidden;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .equip-item:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 24px rgba(37,99,235,0.1);
+  }
+  .equip-item:nth-child(even) { grid-template-columns: 300px 1fr; }
+  .equip-item:nth-child(even) .equip-body { order: 2; }
+  .equip-item:nth-child(even) .equip-img  { order: 1; }
+  .equip-body {
+    padding: 2rem 2.5rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .equip-tag {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 0.4rem;
+  }
+  .equip-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .equip-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; max-width: 440px; }
+  .equip-img { height: 210px; overflow: hidden; }
+  .equip-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .equip-item:hover .equip-img img { transform: scale(1.04); }
+  .equip-img .img-placeholder {
+    height: 210px; border-radius: 0;
+    background: linear-gradient(135deg, #EEF2FF, #DBEAFE);
+    border: none;
+  }
+
+  /* ── DELIVERY ── */
+  #delivery { padding: 90px 5%; background: var(--bg); }
+  .delivery-wrap {
+    margin-top: 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; align-items: start;
+  }
+  .np-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 24px rgba(15,28,63,0.06);
+  }
+  .np-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+  .np-logo-block .np-name {
+    font-family: var(--font-display); font-size: 1.4rem;
+    font-weight: 700; color: var(--navy);
+  }
+  .np-logo-block .np-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+  .np-badge {
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 6px; padding: 0.3rem 0.75rem;
+    font-size: 0.75rem; font-weight: 700; color: var(--accent);
+  }
+  .np-features { display: flex; flex-direction: column; gap: 0.75rem; }
+  .np-feat {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.75rem; border-radius: 8px;
+    background: var(--bg); font-size: 0.88rem; color: var(--navy); font-weight: 500;
+  }
+  .np-feat svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 2; flex-shrink: 0; }
+  .steps-card {
+    background: var(--navy); border-radius: 16px; padding: 2rem;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .steps-card h3 {
+    font-family: var(--font-display); font-size: 1.15rem;
+    font-weight: 700; color: var(--white); margin-bottom: 0.25rem;
+  }
+  .step-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .step-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(245,158,11,0.2);
+    border: 1.5px solid var(--accent2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.8rem; color: var(--accent2);
+    flex-shrink: 0;
+  }
+  .step-row h4 { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+  .step-row p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+  /* ── WHY ── */
+  #why { padding: 90px 5%; background: var(--white); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin-top: 2.5rem;
+  }
+  .why-card {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .why-card:hover {
+    border-color: var(--blue); transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37,99,235,0.1);
+  }
+  .why-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(37,99,235,0.08);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .why-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.8; }
+  .why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+  .why-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 90px 5%; background: var(--bg);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .contact-info-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(15,28,63,0.05);
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .ci-row {
+    display: flex; align-items: flex-start; gap: 0.9rem;
+    padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+  }
+  .ci-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .ci-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: rgba(37,99,235,0.08);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .ci-icon svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 2; }
+  .ci-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+  .ci-val { font-size: 0.9rem; color: var(--navy); font-weight: 500; line-height: 1.5; }
+  .ci-val a { color: var(--navy); text-decoration: none; }
+  .ci-val a:hover { color: var(--blue); }
+  .cf {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    box-shadow: 0 4px 20px rgba(15,28,63,0.05);
+  }
+  .cf h3 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.25rem; color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .cf > p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .fg { margin-bottom: 1rem; }
+  .fg label { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .fg input, .fg textarea {
+    width: 100%;
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: 8px; color: var(--navy);
+    font-family: var(--font-body); font-size: 0.9rem;
+    padding: 0.7rem 0.9rem; outline: none; transition: border-color 0.2s;
+  }
+  .fg input:focus, .fg textarea:focus { border-color: var(--blue); background: var(--white); }
+  .fg textarea { resize: vertical; min-height: 90px; }
+  .cf-btn {
+    width: 100%; background: var(--blue); color: var(--white);
+    border: none; padding: 0.9rem; border-radius: 8px;
+    font-family: var(--font-body); font-weight: 700;
+    font-size: 0.9rem; cursor: pointer; transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+  }
+  .cf-btn:hover { background: var(--navy); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.1rem; color: var(--white);
+  }
+  .footer-logo span { color: var(--accent2); }
+  footer p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    #hero { grid-template-columns: 1fr; padding-top: 90px; }
+    .hero-right { order: -1; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    #about, #contact { grid-template-columns: 1fr; gap: 2rem; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .delivery-wrap { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hero-card-float2 { display: none; }
+  }
+  @media (max-width: 620px) {
+    .equip-item, .equip-item:nth-child(even) { grid-template-columns: 1fr; }
+    .equip-img, .equip-img .img-placeholder { height: 180px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    </div>
+    <span class="nav-logo-name">ІМ<span>ПУЛЬС</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Про нас</a></li>
+    <li><a href="#products">Обладнання</a></li>
+    <li><a href="#delivery">Доставка</a></li>
+    <li><a href="#why">Переваги</a></li>
+    <li><a href="#contact">Контакти</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Замовити</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <div class="dot"></div>
+      Сучасні електротехнічні технології
+    </div>
+    <h1>
+      Електротовари<br>
+      <span class="highlight">широкого</span><br>
+      асортименту
+    </h1>
+    <p class="hero-desc">
+      Виготовлення та продаж електротехнічних виробів. Оперативне вирішення складних і нестандартних завдань. Доставка по всій Україні.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-blue" href="#products">Переглянути продукцію</a>
+      <a class="btn-line" href="#contact">Зв'язатися</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        Власне виробництво
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        Нова Пошта по Україні
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        З 2018 року
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-main">
+      <div class="img-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Головне фото (виробництво або продукція)<br>рекомендований розмір: 800×500px</span>
+      </div>
+    </div>
+    <div class="hero-card-float">
+      <div class="float-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+      </div>
+      <div class="float-text">
+        <strong>Нова Пошта</strong>
+        <span>Доставка по всій Україні</span>
+      </div>
+    </div>
+    <div class="hero-card-float2">
+      <div class="float2-num">2018</div>
+      <div class="float2-label">рік заснування</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="sbar-item">
+    <div class="sbar-num">2018<span></span></div>
+    <div class="sbar-label">Рік заснування</div>
+  </div>
+  <div class="sbar-item">
+    <div class="sbar-num">6<span>+</span></div>
+    <div class="sbar-label">Років на ринку</div>
+  </div>
+  <div class="sbar-item">
+    <div class="sbar-num">UA</div>
+    <div class="sbar-label">Доставка по всій Україні</div>
+  </div>
+  <div class="sbar-item">
+    <div class="sbar-num">24<span>/7</span></div>
+    <div class="sbar-label">Приймаємо замовлення</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-tag">Про компанію</div>
+    <h2 class="section-h2">ТОВ «Сучасні електротехнічні технології «ІМПУЛЬС»</h2>
+    <div class="blue-bar"></div>
+    <p>Компанія «ІМПУЛЬС» з 2018 року виготовляє та реалізує електротехнічні вироби широкого асортименту. Ми орієнтовані на швидкість, якість та гнучкість — беремося за складні та нестандартні завдання клієнтів.</p>
+    <p>Замовити продукцію просто — достатньо зателефонувати оператору. Відправляємо Новою Поштою до будь-якого міста України.</p>
+    <div class="about-pills">
+      <span class="pill">Власне виробництво</span>
+      <span class="pill">Широкий асортимент</span>
+      <span class="pill">Нестандартні рішення</span>
+      <span class="pill">Швидка доставка</span>
+      <span class="pill">Досвід з 2018 року</span>
+      <span class="pill">Нова Пошта</span>
+    </div>
+    <div style="margin-top: 1.75rem;">
+      <div class="req-card">
+        <h4>Реквізити</h4>
+        <div class="req-row"><span class="rk">Повна назва</span><span class="rv">ТОВ «СЕТ «ІМПУЛЬС»</span></div>
+        <div class="req-row"><span class="rk">Код ЄДРПОУ</span><span class="rv">42532713</span></div>
+        <div class="req-row"><span class="rk">Засновано</span><span class="rv">09.10.2018</span></div>
+        <div class="req-row"><span class="rk">Адреса</span><span class="rv">Дніпро, вул. Мандриківська, 47/301-3</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="about-img-wrap">
+      <div class="img-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>Фото офісу або виробництва<br>(додайте самостійно)</span>
+      </div>
+      <div class="about-badge">
+        <span>6+</span>
+        років досвіду
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="prod-top">
+    <div>
+      <div class="section-tag">Асортимент</div>
+      <h2 class="section-h2">Наша продукція</h2>
+    </div>
+    <p>Електротехнічні вироби власного виробництва та широкого асортименту</p>
+  </div>
+  <div class="equip-list">
+
+    <div class="equip-item">
+      <div class="equip-body">
+        <div class="equip-tag">Кабельна продукція</div>
+        <h3>Кабелі та проводи</h3>
+        <p>Широкий асортимент кабельно-провідникової продукції для промислового та побутового використання. Відповідність українським і міжнародним стандартам.</p>
+      </div>
+      <div class="equip-img">
+        <div class="img-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Фото кабельної продукції</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-body">
+        <div class="equip-tag">Розподільчі пристрої</div>
+        <h3>Щити та шафи управління</h3>
+        <p>Виготовлення розподільчих щитів і шаф управління. Стандартні рішення та індивідуальне виготовлення за технічним завданням.</p>
+      </div>
+      <div class="equip-img">
+        <div class="img-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Фото щитів управління</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-body">
+        <div class="equip-tag">Освітлення</div>
+        <h3>Освітлювальні прилади</h3>
+        <p>Промислові та побутові світильники, LED-прожектори, системи зовнішнього та внутрішнього освітлення для будь-яких умов.</p>
+      </div>
+      <div class="equip-img">
+        <div class="img-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Фото освітлювальних приладів</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-body">
+        <div class="equip-tag">Комутація</div>
+        <h3>Комутаційна апаратура</h3>
+        <p>Автоматичні вимикачі, рубильники, реле, перемикачі та інша комутаційна апаратура для промислових і побутових систем.</p>
+      </div>
+      <div class="equip-img">
+        <div class="img-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Фото комутаційної апаратури</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="equip-item">
+      <div class="equip-body">
+        <div class="equip-tag">Під замовлення</div>
+        <h3>Нестандартні рішення</h3>
+        <p>Виготовляємо нестандартні електротехнічні вироби за технічним завданням. Оперативне вирішення складних задач — наша спеціалізація.</p>
+      </div>
+      <div class="equip-img">
+        <div class="img-placeholder">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Фото продукції</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery">
+  <div class="section-tag">Замовлення та доставка</div>
+  <h2 class="section-h2">Як отримати товар</h2>
+  <div class="blue-bar"></div>
+  <div class="delivery-wrap">
+    <div class="np-card">
+      <div class="np-top">
+        <div class="np-logo-block">
+          <div class="np-name">Нова Пошта</div>
+          <div class="np-sub">Доставка по всій Україні</div>
+        </div>
+        <div class="np-badge">Швидко</div>
+      </div>
+      <div class="np-features">
+        <div class="np-feat">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+          До будь-якого відділення в Україні
+        </div>
+        <div class="np-feat">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Відправка в день оформлення замовлення
+        </div>
+        <div class="np-feat">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          Відстеження посилки онлайн
+        </div>
+        <div class="np-feat">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.64 16z"/></svg>
+          Замовити за телефоном: <strong>&nbsp;<a href="tel:+380638374295" style="color:var(--navy)">063-837-42-95</a></strong>
+        </div>
+      </div>
+    </div>
+    <div class="steps-card">
+      <h3>Як оформити замовлення</h3>
+      <div class="step-row">
+        <div class="step-dot">1</div>
+        <div>
+          <h4>Зателефонуйте або напишіть</h4>
+          <p>Зв'яжіться з оператором за номером 063-837-42-95 або надішліть email</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-dot">2</div>
+        <div>
+          <h4>Узгодьте деталі</h4>
+          <p>Уточнимо наявність, терміни виготовлення та умови оплати</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-dot">3</div>
+        <div>
+          <h4>Відправка Новою Поштою</h4>
+          <p>Відправимо до відділення у вашому місті — відстежуйте онлайн</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-dot">4</div>
+        <div>
+          <h4>Отримайте товар</h4>
+          <p>Заберіть у зручному відділенні. Питання — завжди на зв'язку</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-tag">Переваги</div>
+  <h2 class="section-h2">Чому обирають ІМПУЛЬС</h2>
+  <div class="blue-bar"></div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>Власне виробництво</h3>
+      <p>Повний контроль якості без посередників. Конкурентні ціни завдяки прямому виробництву.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Оперативність</h3>
+      <p>Швидке виконання замовлень. Беремося за нестандартні та складні завдання.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3>Доставка по Україні</h3>
+      <p>Нова Пошта до будь-якого відділення. Відправка в день оформлення.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3>6+ років досвіду</h3>
+      <p>На ринку з 2018 року. Досвід роботи з промисловими та побутовими об'єктами.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Індивідуальний підхід</h3>
+      <p>Кожне замовлення розглядаємо окремо. Знаходимо рішення для нетипових задач.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <h3>Зручне замовлення</h3>
+      <p>Оформлення за телефоном — просто зателефонуйте оператору і опишіть потребу.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-tag">Контакти</div>
+    <h2 class="section-h2">Зв'яжіться з нами</h2>
+    <div class="blue-bar"></div>
+    <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">Для замовлення зателефонуйте оператору або надішліть заявку — відповімо швидко.</p>
+    <div class="contact-info-card">
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="ci-label">Адреса</div>
+          <div class="ci-val">49094, Дніпро, Дніпропетровська обл.,<br>вул. Мандриківська, 47, офіс 301/3</div>
+        </div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.64 16z"/></svg></div>
+        <div>
+          <div class="ci-label">Телефон оператора</div>
+          <div class="ci-val"><a href="tel:+380638374295">063-837-42-95</a></div>
+        </div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val"><a href="mailto:PROIZVODSTVO.MY@GMAIL.COM">proizvodstvo.my@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="ci-row">
+        <div class="ci-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div>
+          <div class="ci-label">Реквізити</div>
+          <div class="ci-val">ЄДРПОУ: 42532713 &nbsp;·&nbsp; Засн.: 09.10.2018</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cf">
+    <h3>Залишити заявку</h3>
+    <p>Опишіть потребу — оператор передзвонить або відповість на email</p>
+    <div class="fg">
+      <label>Ваше ім'я</label>
+      <input type="text" placeholder="Іван Петренко">
+    </div>
+    <div class="fg">
+      <label>Телефон</label>
+      <input type="tel" placeholder="+380 xx xxx xx xx">
+    </div>
+    <div class="fg">
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com">
+    </div>
+    <div class="fg">
+      <label>Що потрібно</label>
+      <textarea placeholder="Назва товару, кількість або опис потреби..."></textarea>
+    </div>
+    <button class="cf-btn">Надіслати заявку</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ТОВ «СЕТ <span>«ІМПУЛЬС»</span></div>
+  <p>© 2024 Сучасні електротехнічні технології «ІМПУЛЬС». ЄДРПОУ 42532713</p>
+  <p>49094, Дніпро, вул. Мандриківська, 47, офіс 301/3</p>
+</footer>
+
+</body>
+</html>
