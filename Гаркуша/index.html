@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОП Гаркуша — електротехнічна продукція, Дніпро</title>
+<meta name="description" content="Український постачальник електротехнічної продукції: кабель, провід, автоматика, захист, кабельні системи. Hager, Schneider Electric, Siemens, ABB, SOKOL, ЗЗЦМ та інші.">
+<meta name="theme-color" content="#0E1419">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============ Tokens ============ */
+:root{
+  --bg:#0E1419;        /* нічна сталь */
+  --panel:#16202A;     /* панель */
+  --line:#2B3742;      /* дріт */
+  --text:#ECE8DF;      /* кістка */
+  --muted:#A9B2BB;     /* попіл */
+  --amber:#FFB000;     /* сигнальний жовтий */
+  --copper:#FF6B1A;    /* гаряча мідь */
+
+  --display:"Sofia Sans Extra Condensed","Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+
+  --max:1360px;
+  --rail-x:16px;       /* позиція «кабелю» від лівого краю контейнера */
+  --gutter:44px;       /* лівий відступ контенту (місце під кабель) */
+  --pad:20px;
+  --sec-pad:clamp(72px,10vw,136px);
+}
+@media (min-width:900px){
+  :root{--rail-x:36px;--gutter:104px;--pad:40px}
+}
+
+/* ============ Base ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font:400 17px/1.6 var(--body);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,p,ul,figure,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+img{color:transparent}
+
+/* ============ Header ============ */
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.mark{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  font:800 26px/1 var(--display);letter-spacing:.03em;
+}
+.mark::before{
+  content:"";width:12px;height:12px;background:var(--amber);
+  box-shadow:0 0 12px rgba(255,176,0,.6);
+}
+.top-r{display:flex;align-items:center;gap:22px}
+.tel{text-decoration:none;font-weight:500;white-space:nowrap}
+.tel:hover{color:var(--amber)}
+@media (max-width:640px){.tel{display:none}}
+
+/* ============ Buttons ============ */
+.btn{
+  display:inline-block;background:var(--amber);color:var(--bg);
+  font:800 22px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;
+  text-decoration:none;padding:16px 28px 14px;transition:background .15s;
+}
+.btn:hover{background:var(--copper)}
+.btn-s{font-size:18px;padding:12px 18px 10px}
+
+/* ============ Image slots ============ */
+.slot{position:relative;margin:0;background:var(--panel);border:1px solid var(--line)}
+.slot img{display:block;width:100%;height:auto}
+.slot-crop img{aspect-ratio:var(--ratio,16/10);object-fit:cover}
+.slot.missing{
+  aspect-ratio:var(--ratio,16/10);display:grid;place-items:center;padding:16px;text-align:center;
+  background:repeating-linear-gradient(135deg,var(--panel) 0 14px,#1B2732 14px 28px);
+}
+.slot.missing img{display:none}
+.slot.missing::after{content:attr(data-file);color:var(--muted);font:500 15px/1.4 var(--body)}
+.hero-img{border:0;border-bottom:1px solid var(--line)}
+
+/* ============ Rail: кабель, що загоряється ============ */
+.page{position:relative;max-width:var(--max);margin:0 auto;padding-bottom:var(--sec-pad)}
+.rail{
+  position:absolute;z-index:1;top:0;bottom:0;left:var(--rail-x);
+  width:3px;margin-left:-1.5px;background:var(--line);
+}
+.rail::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:var(--lit,100%);
+  background:linear-gradient(var(--amber),var(--copper));
+  box-shadow:0 0 14px rgba(255,140,0,.55);
+}
+
+.sec{position:relative;padding:var(--sec-pad) var(--pad) 0 var(--gutter)}
+.sec-hero{--sec-pad:clamp(36px,5vw,72px)}
+
+/* вузол на кабелі */
+.sec::before{
+  content:"";position:absolute;z-index:2;
+  left:calc(var(--rail-x) - 9px);top:calc(var(--sec-pad) + 10px);
+  width:18px;height:18px;background:var(--bg);border:2px solid var(--line);
+  transition:background .3s,border-color .3s,box-shadow .3s;
+}
+/* відгалуження до контенту */
+.sec::after{
+  content:"";position:absolute;z-index:2;
+  left:calc(var(--rail-x) + 9px);top:calc(var(--sec-pad) + 18px);height:2px;
+  width:max(0px,calc(var(--gutter) - var(--rail-x) - 9px - 12px));
+  background:var(--line);transition:background .3s;
+}
+.sec.on::before,
+html:not(.js) .sec::before{
+  background:var(--amber);border-color:var(--amber);
+  box-shadow:0 0 0 5px rgba(255,176,0,.16),0 0 20px rgba(255,140,0,.7);
+}
+.sec.on::after,
+html:not(.js) .sec::after{background:var(--amber)}
+
+/* ============ Typography ============ */
+.h1{font-family:var(--display);font-weight:900;line-height:.86;letter-spacing:-.01em;margin-bottom:clamp(28px,4vw,48px)}
+.h1 span{display:block}
+.h1-a{font-size:clamp(52px,12.4vw,184px)}
+.h1-b{font-size:clamp(28px,5.6vw,88px);font-weight:800;color:var(--amber);margin-top:.14em}
+
+.h2{
+  font:800 clamp(40px,7.4vw,116px)/.9 var(--display);letter-spacing:-.005em;
+  max-width:13em;text-wrap:balance;margin-bottom:clamp(28px,4vw,56px);
+}
+.h2 span{display:block}
+.h2,.giant,.c-verbs,.slogan,.h1{overflow-wrap:anywhere}
+.accent{color:var(--amber)}
+
+.giant{font:900 clamp(80px,22vw,320px)/.8 var(--display);letter-spacing:-.01em}
+.sub{font:800 clamp(24px,3.4vw,46px)/1 var(--display);color:var(--amber);margin:.3em 0 clamp(28px,4vw,56px)}
+
+.lead{font:600 clamp(20px,2.2vw,28px)/1.3 var(--body);margin-bottom:22px}
+.prose p{color:var(--muted);max-width:56ch;margin-bottom:1em}
+.prose .em{color:var(--text)}
+.prose-big p{font:500 clamp(20px,2vw,26px)/1.4 var(--body);color:var(--text)}
+
+.statement{
+  margin-top:clamp(36px,5vw,64px);padding-left:20px;border-left:4px solid var(--amber);
+  font:800 clamp(28px,3.6vw,52px)/1.02 var(--display);max-width:22em;text-wrap:balance;
+}
+.statement span{display:block}
+.statement span + span{margin-top:.35em}
+.statement-tight{margin-top:0}
+
+/* ============ Layout helpers ============ */
+.split{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(28px,5vw,80px);align-items:start;
+}
+.split-hero{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+@media (max-width:899px){.split,.split-hero{grid-template-columns:minmax(0,1fr)}}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:clamp(28px,4vw,56px)}
+@media (max-width:599px){.pair{grid-template-columns:minmax(0,1fr)}}
+
+/* ============ Brand plates (hero) ============ */
+.plates{display:flex;flex-wrap:wrap;gap:8px}
+.plates li{border:1px solid var(--line);background:var(--panel);padding:6px 12px;font:500 15px/1.3 var(--body)}
+.plates .ua{border-color:var(--amber);color:var(--amber)}
+.plates-note{margin-top:14px;color:var(--muted);font-size:14px}
+
+/* ============ Ukrainian section ============ */
+.rows{max-width:980px;margin-bottom:clamp(36px,5vw,64px)}
+.rows li{border-top:1px solid var(--line);padding:16px 0 14px;font:700 clamp(26px,3.6vw,48px)/1.05 var(--display)}
+.rows li:last-child{border-bottom:1px solid var(--line)}
+.rows .lit{color:var(--amber)}
+
+.roster{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin:28px 0 32px;
+}
+.roster li{background:var(--panel);padding:clamp(20px,3vw,36px) 20px;font:800 clamp(28px,3.4vw,46px)/1 var(--display)}
+@media (max-width:599px){.roster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.after-roster{max-width:56ch;color:var(--muted);margin-bottom:28px}
+
+/* ============ World brands stack ============ */
+.stack{font:800 clamp(40px,5.2vw,76px)/.98 var(--display)}
+.figure-gap{margin-bottom:28px}
+
+/* ============ Contacts (жовтий блок — кабель підключено) ============ */
+.wrap{max-width:var(--max);margin:0 auto;padding:var(--sec-pad) var(--pad) var(--sec-pad) var(--gutter)}
+.contacts{background:var(--amber);color:var(--bg)}
+.contacts :focus-visible{outline-color:var(--bg)}
+.contacts .h2{color:var(--bg)}
+.c-lead{font:500 clamp(20px,2vw,26px)/1.4 var(--body);max-width:30ch;margin-bottom:28px}
+.c-verbs{font:900 clamp(34px,6vw,88px)/.92 var(--display)}
+.c-verbs span{display:block}
+.contact{display:grid;gap:26px}
+.contact dt{font:600 14px/1.2 var(--body);opacity:.72;margin-bottom:6px}
+.contact dd{font:500 19px/1.4 var(--body)}
+.contact .big{font:800 clamp(28px,3.6vw,48px)/1 var(--display);overflow-wrap:anywhere}
+.contact a{text-decoration-thickness:2px;text-underline-offset:5px}
+.contact a:hover{text-decoration-color:var(--copper)}
+
+/* ============ Footer ============ */
+.foot .wrap{padding-top:clamp(56px,7vw,96px);padding-bottom:36px}
+.slogan{font:900 clamp(36px,7vw,104px)/.92 var(--display)}
+.slogan span{display:block}
+.copy{margin-top:clamp(40px,6vw,80px);padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+
+<body id="top">
+
+<header class="top">
+  <div class="top-in">
+    <a class="mark" href="#top">ФОП ГАРКУША Ю.О.</a>
+    <div class="top-r">
+      <a class="tel" href="tel:+380637666177">063-766-61-77</a>
+      <a class="btn btn-s" href="#contacts">Запитати ціну</a>
+    </div>
+  </div>
+</header>
+
+<!-- Баннер: файл FOP_Harkusha_header (.jpg / .png / .webp) кладіть поруч із index.html -->
+<figure class="slot hero-img" style="--ratio:21/9" data-file="FOP_Harkusha_header">
+  <img src="images/FOP_Harkusha_header.jpg" alt="Україна працює. Ми забезпечуємо її електротехнікою.">
+</figure>
+
+<main class="page">
+  <div class="rail" aria-hidden="true"></div>
+
+  <!-- 2. Своїх підтримуємо -->
+  <section class="sec" id="about">
+    <h2 class="h2">
+      <span>СВОЇХ ПІДТРИМУЄМО.</span>
+      <span class="accent">НАЙКРАЩЕ ЗІ СВІТУ — ПОСТАЧАЄМО.</span>
+    </h2>
+    <div class="split">
+      <div class="prose">
+        <p class="lead em">Ми — український постачальник електротехнічної продукції.</p>
+        <p>Працюємо з українськими виробниками та міжнародними брендами, щоб підприємства отримували потрібне обладнання без прив’язки до одного каталогу чи одного виробника.</p>
+        <p class="em">Де є якісний український продукт — пропонуємо український.</p>
+        <p class="em">Де потрібна конкретна світова технологія — знаходимо та постачаємо її.</p>
+      </div>
+      <figure class="slot slot-crop" style="--ratio:16/10" data-file="03-kabel-ta-provid">
+        <img src="images/03-kabel-ta-provid.jpg" alt="Кабель та провід" loading="lazy">
+      </figure>
+    </div>
+    <p class="statement">Бо український бізнес має отримувати не «те, що є», а те, що потрібно для роботи.</p>
+  </section>
+
+  <!-- 3. Українське -->
+  <section class="sec" id="ukrainian">
+    <h2 class="h2">УКРАЇНСЬКЕ — ЦЕ НЕ ПОЗНАЧКА НА УПАКОВЦІ.</h2>
+    <ul class="rows">
+      <li>Це виробництво, яке продовжує працювати.</li>
+      <li>Люди, які виходять на роботу.</li>
+      <li>Підприємства, які запускають обладнання.</li>
+      <li class="lit">Будівлі, в яких знову є електрика.</li>
+      <li>Нові цехи, склади, офіси, магазини та об’єкти.</li>
+    </ul>
+    <p class="lead">Тому українські виробники займають окреме місце в нашому асортименті.</p>
+    <ul class="roster">
+      <li>SOKOL</li>
+      <li>ЗЗЦМ</li>
+      <li>АСКО-УКРЕМ</li>
+      <li>DigiTOP</li>
+      <li>ZUBR</li>
+      <li>NIK</li>
+    </ul>
+    <p class="after-roster">Коли український продукт відповідає завданню — ми хочемо, щоб про нього знали, його купували і він працював тут.</p>
+    <a class="btn" href="#contacts">Обрати українське</a>
+  </section>
+
+  <!-- 4. SOKOL -->
+  <section class="sec" id="sokol">
+    <h2 class="giant">SOKOL</h2>
+    <p class="sub">ГОФРОТРУБА ТА КАБЕЛЬНІ СИСТЕМИ</p>
+    <div class="pair">
+      <figure class="slot slot-crop" style="--ratio:16/10" data-file="02-gofrotruba-sokol">
+        <img src="images/02-gofrotruba-sokol.jpg" alt="Гофротруба SOKOL" loading="lazy">
+      </figure>
+      <figure class="slot slot-crop" style="--ratio:16/10" data-file="04-kabelni-systemy">
+        <img src="images/04-kabelni-systemy.jpg" alt="Кабельні системи" loading="lazy">
+      </figure>
+    </div>
+    <div class="split">
+      <div class="prose">
+        <p class="lead em">Для монтажу, захисту та організації кабельних мереж.</p>
+        <p>Різні діаметри, виконання та комплектуючі — підбираємо продукцію під умови конкретного об’єкта.</p>
+      </div>
+      <p class="statement statement-tight">Вироблено в Україні. Працює на українських об’єктах.</p>
+    </div>
+  </section>
+
+  <!-- 5. Світова автоматика -->
+  <section class="sec" id="world">
+    <h2 class="h2">А КОЛИ ПОТРІБНА СВІТОВА АВТОМАТИКА —</h2>
+    <div class="split">
+      <ul class="stack">
+        <li>Hager</li>
+        <li>Schneider Electric</li>
+        <li>Siemens</li>
+        <li>ABB</li>
+        <li>Eaton</li>
+        <li>Legrand</li>
+        <li>WAGO</li>
+        <li>CHINT</li>
+        <li>ETI</li>
+      </ul>
+      <div>
+        <figure class="slot slot-crop figure-gap" style="--ratio:16/10" data-file="01-avtomatyka-hager-schneider">
+          <img src="images/01-avtomatyka-hager-schneider.jpg" alt="Модульна автоматика Hager та Schneider Electric" loading="lazy">
+        </figure>
+        <div class="prose">
+          <p>Автоматичні вимикачі, диференційний захист, контактори, реле, модульне обладнання, компоненти автоматизації та розподілу електроенергії.</p>
+        </div>
+        <p class="statement statement-tight" style="margin-top:32px">
+          <span>Ми не протиставляємо українське світовому.</span>
+          <span>Ми поєднуємо їх там, де це дає найкраще технічне рішення.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Одна заявка -->
+  <section class="sec" id="request">
+    <h2 class="h2">
+      <span>ОДНА ЗАЯВКА.</span>
+      <span>ДЕСЯТКИ ВИРОБНИКІВ.</span>
+      <span>ОДИН ПОСТАЧАЛЬНИК.</span>
+    </h2>
+    <div class="split">
+      <div class="prose">
+        <p class="lead em">Не потрібно самостійно збирати специфікацію у десяти компаніях.</p>
+        <p class="em">Надсилайте нам перелік.</p>
+        <p>Ми знайдемо позиції у різних виробників, перевіримо доступність, запропонуємо заміни там, де це необхідно, та сформуємо комплексну пропозицію.</p>
+      </div>
+      <p class="statement statement-tight">
+        <span>Шукаємо не те, що зручно продати нам.</span>
+        <span class="accent">Шукаємо те, що потрібно вам.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. Ми тут -->
+  <section class="sec" id="here">
+    <div class="split">
+      <h2 class="giant">МИ ТУТ.</h2>
+      <div>
+        <div class="prose prose-big">
+          <p>Ми працюємо в Україні.</p>
+          <p>Купуємо в українських виробників.</p>
+          <p>Постачаємо українським підприємствам.</p>
+          <p>Платимо податки в Україні.</p>
+          <p>І залишаємось частиною економіки країни, яка продовжує виробляти, будувати та працювати.</p>
+          <p>Без великих слів.</p>
+        </div>
+        <p class="statement statement-tight">Просто робимо свою роботу тут.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 8. Контакти -->
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <h2 class="h2">ПОТРІБНО УКОМПЛЕКТУВАТИ ОБ’ЄКТ?</h2>
+    <div class="split">
+      <div>
+        <p class="c-lead">Надішліть специфікацію, артикул, креслення або просто перелік необхідного.</p>
+        <p class="c-verbs">
+          <span>ЗНАЙДЕМО.</span>
+          <span>УКОМПЛЕКТУЄМО.</span>
+          <span>ПОСТАВИМО.</span>
+        </p>
+      </div>
+      <dl class="contact">
+        <div>
+          <dt>Ел. пошта</dt>
+          <dd class="big"><a href="mailto:garkusau77@gmail.com">garkusau77@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>Телефон</dt>
+          <dd class="big"><a href="tel:+380637666177">063-766-61-77</a></dd>
+        </div>
+        <div>
+          <dt>Адреса</dt>
+          <dd>49000, Дніпропетровська обл., місто Дніпро, Амур-Нижньодніпровський район, вул. Онезька, будинок 2</dd>
+        </div>
+        <div>
+          <dt>РНОКПП</dt>
+          <dd>2736807837</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="slogan">
+      <span>ПРАЦЮЄМО В УКРАЇНІ.</span>
+      <span>КУПУЄМО УКРАЇНСЬКЕ.</span>
+      <span>ПОСТАЧАЄМО НАЙКРАЩЕ.</span>
+    </p>
+    <p class="copy">ФОП ГАРКУША ЮРІЙ ОЛЕКСАНДРОВИЧ © 2026</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  /* --- Картинки: якщо .jpg нема — пробуємо інші розширення, інакше показуємо заглушку --- */
+  var EXT = ['png', 'webp', 'jpeg', 'jpg'];
+  document.querySelectorAll('.slot img').forEach(function (img) {
+    var slot = img.closest('.slot');
+    var base = img.getAttribute('src').replace(/\.[a-z]+$/i, '');
+    var first = (img.getAttribute('src').match(/\.([a-z]+)$/i) || [])[1];
+    var queue = EXT.filter(function (e) { return e !== first; });
+    img.addEventListener('error', function () {
+      if (queue.length) { img.src = base + '.' + queue.shift(); }
+      else { slot.classList.add('missing'); }
+    });
+    if (img.complete && img.naturalWidth === 0) { img.dispatchEvent(new Event('error')); }
+  });
+
+  /* --- Кабель, що загоряється при прокрутці --- */
+  var page = document.querySelector('.page');
+  var rail = document.querySelector('.rail');
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var top = page.getBoundingClientRect().top + window.pageYOffset;
+    var h = page.offsetHeight;
+    var lit = window.pageYOffset + window.innerHeight * 0.72 - top;
+    var atBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2;
+    if (atBottom) lit = h;
+    lit = Math.max(0, Math.min(h, lit));
+    rail.style.setProperty('--lit', lit + 'px');
+    secs.forEach(function (s) {
+      var pad = parseFloat(getComputedStyle(s).paddingTop) || 0;
+      s.classList.toggle('on', s.offsetTop + pad + 10 <= lit);
+    });
+  }
+  function request() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request);
+  window.addEventListener('load', request);
+  if ('ResizeObserver' in window) { new ResizeObserver(request).observe(page); }
+  update();
+})();
+</script>
+</body>
+</html>
