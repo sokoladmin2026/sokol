@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОП Дуков С. С. — Комплексне електротехнічне постачання об’єктів</title>
+<meta name="description" content="Комплектуємо будівельні об’єкти електротехнічною продукцією під ключ: кабель, автоматика, щити, кабеленесучі системи, монтажні матеріали. Один проєкт — один постачальник.">
+<meta name="theme-color" content="#EDF0F3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EDF0F3;--ink:#0F1B2D;--mute:#56627A;--y:#F5B800;--line:#C5CCD6}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;background-attachment:fixed;color:var(--ink);font:400 17px/1.6 "Onest",system-ui,sans-serif}
+h1,h2,h3{font-family:"Geologica","Arial",sans-serif;line-height:1.1;letter-spacing:-.015em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px;box-shadow:0 0 0 6px var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1.2em;padding:15px 22px;font-weight:600;text-decoration:none;border:2px solid var(--ink);background:var(--paper);transition:transform .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.y{background:var(--y)}
+.btn.d{background:var(--ink);color:#fff}
+.btn small{display:block;font-weight:400;font-size:13px;opacity:.75}
+header{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:16px}
+.logo{font:700 15px "Geologica",sans-serif;text-decoration:none}
+.logo i{display:inline-block;width:12px;height:12px;background:var(--y);margin-right:10px}
+header a.tel{background:var(--y);color:var(--ink);padding:9px 16px;font-weight:700;text-decoration:none}
+section{padding:84px 0}
+.h2{font-size:clamp(28px,3.6vw,46px);font-weight:800;max-width:17em}
+.lead{max-width:36em;color:var(--mute);margin-top:18px;font-size:18px}
+/* hero */
+.hero{padding:64px 0 72px;border-bottom:3px solid var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,62px);font-weight:800}
+.hero p{margin:24px 0 8px;font-size:18px;max-width:30em}
+.hero .kinds{color:var(--mute);margin-bottom:30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.gantt{background:var(--paper);border:2px solid var(--ink);padding:18px 18px 22px;box-shadow:8px 8px 0 var(--ink)}
+.gantt>b{display:block;font:600 13px "Onest";color:var(--mute);margin-bottom:12px}
+.gt{position:relative;display:grid;gap:10px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 20%)}
+.gt a{display:block;padding:9px 12px;background:var(--y);border:2px solid var(--ink);font:600 14px/1.25 "Onest";text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gt a:hover{background:var(--ink);color:var(--y)}
+.gt a:nth-child(1){margin-right:60%}
+.gt a:nth-child(2){margin:0 45% 0 12%}
+.gt a:nth-child(3){margin:0 25% 0 28%}
+.gt a:nth-child(4){margin:0 8% 0 44%}
+.gt a:nth-child(5){margin-left:60%}
+.gantt em{display:block;margin-top:14px;font:500 14px "Onest";color:var(--mute)}
+/* stages */
+.tabs{display:flex;flex-wrap:wrap;gap:0;margin:40px 0 0;border:2px solid var(--ink);border-bottom:0;background:var(--paper)}
+.tabs button{flex:1 1 0;min-width:150px;padding:16px 14px;font:600 15px/1.25 "Onest";text-align:left;background:transparent;border:0;border-right:2px solid var(--ink);cursor:pointer;color:var(--ink)}
+.tabs button:last-child{border-right:0}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--y)}
+.panels{display:grid}
+.panel{grid-area:1/1;visibility:hidden;display:grid;grid-template-columns:1.5fr 1fr;border:2px solid var(--ink);background:var(--paper)}
+.panel.on{visibility:visible}
+.panel img{width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-right:2px solid var(--ink)}
+.panel .tx{padding:26px 28px;display:flex;flex-direction:column}
+.panel h3{font-size:24px;font-weight:700;margin-bottom:10px}
+.panel .tx p{font-size:16px;line-height:1.5}
+.panel ul{list-style:none;padding:0;margin:14px 0}
+.panel li{padding:6px 0 6px 28px;font-size:15px;border-top:1px solid var(--line);position:relative}
+.panel li:before{content:"";position:absolute;left:0;top:1em;width:16px;height:4px;background:var(--y);outline:1px solid var(--ink)}
+.note{margin-top:auto;background:var(--y);border:2px solid var(--ink);padding:12px 16px;font:700 15px/1.3 "Geologica"}
+/* one */
+.one{background:var(--ink);color:#fff}
+.one .h2{color:#fff}
+.one .lead{color:#AEB8CB}
+.one .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.one ol{list-style:none;padding:0}
+.one li{font:800 clamp(20px,2.6vw,32px)/1.15 "Geologica";padding:20px 0;border-top:2px solid var(--y)}
+.one li:last-child{border-bottom:2px solid var(--y)}
+/* kit */
+dl{margin-top:44px;border-top:2px solid var(--ink)}
+.kit{display:grid;grid-template-columns:.9fr 1.4fr;gap:32px;padding:26px 0;border-bottom:1px solid var(--ink)}
+dt{font:700 clamp(18px,2vw,24px)/1.2 "Geologica"}
+dd{color:#2B3852}
+dd b{display:block;margin-top:6px;font-weight:600;color:var(--ink)}
+/* who */
+.who{background:#fff;border-block:2px solid var(--ink)}
+.wg{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border:2px solid var(--ink)}
+.wg div{padding:26px 22px;border-right:2px solid var(--ink)}
+.wg div:last-child{border:0}
+.wg h3{font-size:17px;font-weight:700;margin-bottom:10px}
+.wg p{font-size:15px;color:#2B3852}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.contact .h2{max-width:14em}
+.contact p{margin-top:20px;max-width:32em}
+.acts{display:grid;gap:12px}
+.acts .btn{font-size:18px}
+footer{background:var(--ink);color:#C9D1E0;padding:40px 0;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer strong{display:block;color:#fff;margin-bottom:6px}
+footer a{text-decoration:none;border-bottom:1px solid #667}
+@media(max-width:900px){
+.hero .wrap,.one .wrap,.contact .wrap,footer .wrap,.panel.on,.kit{grid-template-columns:1fr}
+.kit{gap:8px}
+.panel img{border-right:0;border-bottom:2px solid var(--ink)}
+.tabs{flex-wrap:nowrap;overflow-x:auto}
+.tabs button{flex:0 0 auto;min-width:0;white-space:nowrap}
+.wg{grid-template-columns:1fr 1fr}.wg div{border-bottom:2px solid var(--ink)}
+section{padding:60px 0}
+.gt a:nth-child(n){margin-left:0!important;margin-right:0!important}
+header .logo span{display:none}
+}
+@media(max-width:520px){.wg{grid-template-columns:1fr}.wg div{border-right:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+<noscript><style>.panels{display:block}.panel{visibility:visible;margin-top:16px}.tabs{display:none}</style></noscript>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top"><i></i>ФОП Дуков С. С.<span> · електротехнічне постачання</span></a>
+<a class="tel" href="tel:+380637666220">Зателефонувати</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Від проєкту — до готової інфраструктури</h1>
+<p>Комплектуємо будівельні об’єкти електротехнічною продукцією під ключ. Один проєкт. Один постачальник. Повний контроль комплектації.</p>
+<p class="kinds">Житлові комплекси. Комерційна нерухомість. Промислові та інфраструктурні об’єкти.</p>
+<div class="cta">
+<a class="btn y" href="#contact">Передати специфікацію</a>
+<a class="btn" href="#stages">Як ми працюємо</a>
+</div>
+</div>
+<div class="gantt" aria-label="Графік постачання за етапами будівництва">
+<b>Постачання в ритмі будівництва</b>
+<div class="gt">
+<a href="#stages" data-go="0">Проєкт</a>
+<a href="#stages" data-go="1">Комплектація</a>
+<a href="#stages" data-go="2">Поставка</a>
+<a href="#stages" data-go="3">Монтаж</a>
+<a href="#stages" data-go="4">Доукомплектація</a>
+</div>
+<em>Матеріали надходять тоді, коли вони потрібні будівництву.</em>
+</div>
+</div></div>
+
+<section id="stages">
+<div class="wrap">
+<h2 class="h2">Постачання, яке йде за графіком робіт</h2>
+<p class="lead">Немає сенсу завозити на майданчик те, що знадобиться лише через кілька місяців. І неприпустимо чекати обладнання, коли бригада вже готова його монтувати. Комплектуємо за етапами будівництва, корпусами, секціями або чергами проєкту.</p>
+
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" aria-controls="p0" id="t0">Проєкт та планування</button>
+<button role="tab" aria-selected="false" aria-controls="p1" id="t1">Комплектація матеріалів</button>
+<button role="tab" aria-selected="false" aria-controls="p2" id="t2">Логістика та поставка</button>
+<button role="tab" aria-selected="false" aria-controls="p3" id="t3">Монтаж та реалізація</button>
+<button role="tab" aria-selected="false" aria-controls="p4" id="t4">Доукомплектація та підтримка</button>
+</div>
+
+<div class="panels">
+<div class="panel on" id="p0" role="tabpanel" aria-labelledby="t0">
+<img src="images/etap-1.png" alt="Інженери вивчають проєктну документацію на будівельному майданчику">
+<div class="tx"><h3>Проєкт та планування</h3>
+<p>Вивчаємо проєкт, специфікацію та технічні вимоги об’єкта. Підбираємо оптимальні рішення та формуємо комерційну пропозицію з урахуванням бюджету, строків та особливостей будівництва.</p>
+<ul><li>Аналіз проєктної документації</li><li>Підбір технічних рішень</li><li>Формування комерційної пропозиції</li><li>Узгодження обсягів, бюджету та графіка</li></ul>
+<div class="note">Надійна основа для успішної реалізації вашого об’єкта</div></div>
+</div>
+
+<div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
+<img src="images/etap-2.png" alt="Склад із кабельними барабанами, гофрою та лотками" loading="lazy">
+<div class="tx"><h3>Комплектація матеріалів</h3>
+<p>Підбираємо та комплектуємо повний перелік електротехнічної продукції згідно зі специфікацією проєкту.</p>
+<ul><li>Кабель і провід</li><li>Автоматика та захист</li><li>Щитове обладнання</li><li>Кабеленесучі системи</li><li>Монтажні матеріали та витратні позиції</li></ul>
+<div class="note">Усі необхідні позиції в одній комплектації</div></div>
+</div>
+
+<div class="panel" id="p2" role="tabpanel" aria-labelledby="t2">
+<img src="images/etap-3.png" alt="Вантажівка та навантажувач з кабельними барабанами біля будівництва" loading="lazy">
+<div class="tx"><h3>Логістика та поставка</h3>
+<p>Організовуємо своєчасну доставку матеріалів на об’єкт. Узгоджуємо графік постачання з етапами будівництва.</p>
+<ul><li>Оперативна доставка на об’єкт</li><li>Узгоджений графік поставок</li><li>Поставка окремими корпусами, секціями або чергами</li></ul>
+<div class="note">Матеріали приїжджають тоді, коли вони потрібні</div></div>
+</div>
+
+<div class="panel" id="p3" role="tabpanel" aria-labelledby="t3">
+<img src="images/etap-4.png" alt="Електромонтажник прокладає кабельні траси під стелею" loading="lazy">
+<div class="tx"><h3>Монтаж та реалізація</h3>
+<p>Матеріали відповідають проєктним рішенням і готові до монтажу. Забезпечуємо комплектацію для оперативної та якісної роботи електромонтажників на об’єкті.</p>
+<ul><li>Від кабельних трас до щитового обладнання</li><li>Монтажні матеріали, кріплення, з’єднання</li><li>Клеми, наконечники та обладнання для фінального етапу</li></ul>
+<div class="note">Якісна комплектація — стабільний процес будівництва</div></div>
+</div>
+
+<div class="panel" id="p4" role="tabpanel" aria-labelledby="t4">
+<img src="images/etap-5.png" alt="Трансформаторна підстанція на заході сонця" loading="lazy">
+<div class="tx"><h3>Доукомплектація та підтримка</h3>
+<p>Будівництво — живий процес. Проєкти уточнюються, обсяги змінюються, виникають додаткові потреби. Оперативно закриваємо додаткові заявки та підбираємо аналоги.</p>
+<ul><li>Оперативна поставка додаткових позицій</li><li>Підбір аналогів при змінах у проєкті</li><li>Своєчасна комплектація для завершення об’єкта</li></ul>
+<div class="note">Об’єкт не повинен зупинятися через одну відсутню позицію</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="one">
+<div class="wrap">
+<div>
+<h2 class="h2">Одна точка відповідальності</h2>
+<p class="lead">Великий об’єкт не повинен залежати від десятка непов’язаних між собою постачальників. Коли кабель закуповується в одному місці, автоматика в іншому, а монтажні матеріали шукають уже під час робіт, постачання перетворюється на окремий проєкт усередині будівництва.</p>
+</div>
+<ol>
+<li>Один постачальник</li>
+<li>Єдина комплектація</li>
+<li>Один канал комунікації</li>
+<li>Одна відповідальність за результат</li>
+</ol>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2 class="h2">Електротехнічна основа вашого проєкту</h2>
+<dl>
+<div class="kit"><dt>Кабельна продукція</dt><dd>Силові та розподільчі лінії, внутрішні мережі, освітлення, інженерні системи та підключення обладнання. Комплектуємо обсяги відповідно до проєкту та етапу будівництва.</dd></div>
+<div class="kit"><dt>Модульна автоматика</dt><dd>Автоматичні вимикачі, ПЗВ, диференційний захист, контактори, реле та інше обладнання.<b>Schneider Electric • Hager • ABB • ETI • CHINT • АСКО-УКРЕМ</b></dd></div>
+<div class="kit"><dt>Щитове обладнання</dt><dd>Розподільчі щити, корпуси, бокси та комплектуючі.</dd></div>
+<div class="kit"><dt>Кабеленесучі системи</dt><dd>Труби, гофра, кабельні канали, лотки, кріплення та елементи прокладання інженерних мереж.</dd></div>
+<div class="kit"><dt>З’єднання та монтаж</dt><dd>Професійні рішення для електромонтажу.<b>WAGO • PLANK та інші</b></dd></div>
+</dl>
+<p class="lead">Проєкт визначає вимоги. Ми підбираємо конфігурацію відповідно до технічних характеристик, бюджету та строків постачання. Не продаємо бренд заради бренду — формуємо рішення під конкретний об’єкт.</p>
+</div>
+</section>
+
+<section class="who">
+<div class="wrap">
+<h2 class="h2">Для тих, хто будує у великому масштабі</h2>
+<div class="wg">
+<div><h3>Забудовникам</h3><p>Комплексне електротехнічне постачання житлових та комерційних проєктів.</p></div>
+<div><h3>Девелоперським компаніям</h3><p>Централізована комплектація об’єктів із можливістю поетапного постачання.</p></div>
+<div><h3>Генеральним підрядникам</h3><p>Комплектація відповідно до проєктної документації та графіка виконання робіт.</p></div>
+<div><h3>Електромонтажним організаціям</h3><p>Робота зі специфікаціями, технічними характеристиками та професійною номенклатурою.</p></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<div>
+<h2 class="h2">Ви будуєте об’єкт. Ми забезпечуємо його енергією.</h2>
+<p>Одна відсутня позиція може зупинити цілу бригаду. Тому наше завдання — щоб постачання працювало в ритмі вашого будівництва. Передайте нам проєкт або специфікацію, і ми перетворимо її на готову систему постачання.</p>
+</div>
+<div class="acts">
+<a class="btn y" href="tel:+380637666220"><span>Зателефонувати<small>+380 63 766 62 20</small></span></a>
+<a class="btn d" href="viber://chat?number=%2B380637666220"><span>Viber<small>надіслати специфікацію</small></span></a>
+<a class="btn d" href="https://t.me/+380637666220" target="_blank" rel="noopener"><span>Telegram<small>надіслати специфікацію</small></span></a>
+<a class="btn" href="mailto:a.dukov45@gmail.com"><span>E-mail<small>a.dukov45@gmail.com</small></span></a>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div><strong>ФОП ДУКОВ СЕРГІЙ СЕРГІЙОВИЧ</strong>Комплексне електротехнічне постачання для тих, хто будує.</div>
+<div><strong>Реквізити</strong>РНОКПП: 2930621813<br>52600, Дніпропетровська обл., Васильківський р-н, смт Васильківка, вул. Партизанська, буд. 139, кв. 50</div>
+<div><strong>Контакти</strong><a href="tel:+380637666220">+380 63 766 62 20</a><br><a href="mailto:a.dukov45@gmail.com">a.dukov45@gmail.com</a></div>
+</div></footer>
+
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('[role=tab]')),ps=[].slice.call(document.querySelectorAll('.panel'));
+function go(i){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i);t.tabIndex=k===i?0:-1});ps.forEach(function(p,k){p.classList.toggle('on',k===i)})}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){go(i)});t.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;if(n!==null&&tabs[n]){go(n);tabs[n].focus()}})});
+[].forEach.call(document.querySelectorAll('[data-go]'),function(a){a.addEventListener('click',function(){go(+a.dataset.go)})});
+})();
+</script>
+</body>
+</html>
