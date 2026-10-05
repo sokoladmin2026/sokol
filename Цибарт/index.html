@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОП Цибарт В. Ю. — Електротехнічна продукція від перевірених виробників</title>
+<meta name="description" content="Електротехнічна продукція, перевірена часом: автоматика, кабель, кабельні системи та електромонтажні комплектуючі від перевірених брендів. Гарантія якості від постачальника.">
+<meta name="theme-color" content="#20242B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1C1F24;--steel:#3D4650;--mute:#5B6670;--paper:#EBEEF0;--card:#F5F7F8;--cu:#2E8B9C;--cu-d:#1F6372;--line:#D2D7DA}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.65 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cu);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.eyebrow{display:flex;align-items:center;gap:12px;font:600 13px/1 "Inter";letter-spacing:.14em;text-transform:uppercase;color:var(--cu-d)}
+.eyebrow b{font-family:"Fraunces";font-weight:600;font-size:22px;letter-spacing:0;color:var(--cu)}
+.eyebrow:after{content:"";flex:1;height:1px;background:var(--line)}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:14px 24px;border-radius:2px;font-weight:600;text-decoration:none;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(32,36,43,.4)}
+.btn.cu{background:var(--cu);border-color:var(--cu);color:#fff}
+.btn.lt{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn small{display:block;font-weight:400;font-size:12.5px;opacity:.8}
+header{position:sticky;top:0;z-index:5;background:rgba(32,36,43,.94);backdrop-filter:blur(8px);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;gap:16px}
+.logo{font:600 16px "Fraunces",serif;text-decoration:none}
+.logo em{font-style:normal;color:var(--cu)}
+header a.tel{background:var(--cu);color:#fff;padding:9px 18px;text-decoration:none;font:600 14px "Inter"}
+/* hero */
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:76px 24px 0}
+.hero .eyebrow b{color:var(--cu)}
+.hero .eyebrow:after{background:rgba(255,255,255,.18)}
+.hero h1{font-size:clamp(32px,4.6vw,54px);margin-top:22px}
+.hero p{margin:22px 0 32px;max-width:30em;color:#C3C9D1;font-size:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.seal{position:relative;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.14)}
+.seal img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03)}
+.seal .stamp{position:absolute;right:-16px;bottom:-16px;width:118px;height:118px;border-radius:50%;background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;font:700 12px/1.3 "Fraunces";box-shadow:0 14px 30px -10px rgba(0,0,0,.5);border:2px solid var(--cu)}
+/* sections */
+section{padding:92px 0}
+.h2{font-size:clamp(27px,3.3vw,42px);margin-top:16px;max-width:17em}
+.lead{max-width:36em;color:var(--mute);margin-top:18px;font-size:18px}
+/* 01 rows */
+.rows{margin-top:54px;display:grid;gap:2px;background:var(--line)}
+.row{display:grid;grid-template-columns:1fr 1fr;background:var(--card);align-items:center}
+.row.rev .ph{order:2}
+.row .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.row .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.row:hover .ph img{transform:scale(1.04)}
+.row .tx{padding:40px 46px}
+.row .no{font:600 14px "Fraunces";color:var(--cu-d);letter-spacing:.06em}
+.row h3{font-size:24px;margin:10px 0 12px}
+.row p{color:var(--mute)}
+/* 02 brands */
+.brands{background:var(--ink);color:#fff}
+.brands .h2{color:#fff}
+.brands .lead{color:#AEB6BF}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.chips span{border:1px solid rgba(255,255,255,.22);padding:11px 20px;font:500 15px "Inter";letter-spacing:.02em}
+.chips span:nth-child(odd){border-color:rgba(200,116,46,.55)}
+.note{margin-top:28px;color:#9AA2AB;font-size:15px;max-width:34em}
+/* 03 principles */
+.pri{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.pri div{padding:30px 26px 0;border-right:1px solid var(--line)}
+.pri div:last-child{border-right:0}
+.pri .num{font:600 36px "Fraunces";color:var(--line)}
+.pri h3{font-size:18px;margin:14px 0 10px}
+.pri p{color:var(--mute);font-size:15.5px}
+/* 04 partner */
+.partner{position:relative;background:var(--ink);color:#fff}
+.partner .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr .85fr;gap:48px;align-items:center}
+.partner .h2{color:#fff}
+.partner p{color:#C3C9D1;margin-top:20px;max-width:30em;font-size:18px}
+.partner .ph{aspect-ratio:4/3;border:1px solid rgba(255,255,255,.16)}
+.partner .ph img{width:100%;height:100%;object-fit:cover;display:block}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.contact p{margin-top:20px;max-width:32em;color:var(--mute)}
+.acts{display:grid;gap:12px}
+.acts .btn{justify-content:space-between;font-size:17px}
+footer{background:var(--ink);color:#AEB6BF;padding:42px 0;font-size:14.5px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer strong{display:block;color:#fff;margin-bottom:6px;font-family:"Fraunces";font-weight:600}
+footer a{text-decoration:none;border-bottom:1px solid #566}
+@media(max-width:900px){
+.hero .wrap,.row,.partner .wrap,.contact .wrap,footer .wrap{grid-template-columns:1fr}
+.row .ph{order:-1!important}
+.row .tx{padding:28px 6px 34px}
+.pri{grid-template-columns:1fr 1fr}
+.pri div{border-bottom:1px solid var(--line);padding-bottom:22px}
+.pri div:nth-child(2n){border-right:0}
+section{padding:60px 0}
+.seal .stamp{width:96px;height:96px;right:-8px;bottom:-8px}
+header .logo em{display:none}
+}
+@media(max-width:560px){.pri{grid-template-columns:1fr}.pri div{border-right:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">ФОП Цибарт <em>В. Ю.</em></a>
+<a class="tel" href="tel:+380935360796">Зателефонувати</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="eyebrow"><b>ЦВЮ</b>Електротехнічна продукція</div>
+<h1>Якість, перевірена часом</h1>
+<p>Електротехнічна продукція від виробників, які десятиліттями доводять свою надійність. Співпрацюємо з професіоналами та перевіреними компаніями, для яких якість обладнання, безпека та стабільність постачання — безумовні пріоритети.</p>
+<div class="cta">
+<a class="btn cu" href="#contact">Залишити заявку</a>
+<a class="btn lt" href="#product">Асортимент</a>
+</div>
+</div>
+<div class="seal">
+<img src="images/06_profesionaly.png" alt="Два електромонтажники перевіряють розподільчий щит">
+<div class="stamp">ГАРАНТІЯ<br>ЯКОСТІ</div>
+</div>
+</div></div>
+
+<section id="product">
+<div class="wrap">
+<div class="eyebrow"><b>01</b>Продукція, якій довіряють</div>
+<h2 class="h2">Ретельно відібраний асортимент для житлового, комерційного та промислового будівництва</h2>
+<div class="rows">
+
+<div class="row">
+<div class="ph"><img src="images/01_avtomatyka.png" alt="Автоматичні вимикачі та модульне обладнання в щиті" loading="lazy"></div>
+<div class="tx"><div class="no">1.1</div><h3>Автоматика та електрозахист</h3><p>Автоматичні вимикачі, пристрої захисного відключення, модульне обладнання та комплектуючі для електрощитів.</p></div>
+</div>
+
+<div class="row rev">
+<div class="ph"><img src="images/02_kabeli.png" alt="Бухти кабелю різних кольорів та перерізів" loading="lazy"></div>
+<div class="tx"><div class="no">1.2</div><h3>Кабельно-провідникова продукція</h3><p>Кабелі та проводи для монтажу електромереж різного призначення.</p></div>
+</div>
+
+<div class="row">
+<div class="ph"><img src="images/03_kabelni_systemy.png" alt="Кабель-канали, гофровані труби та кріплення" loading="lazy"></div>
+<div class="tx"><div class="no">1.3</div><h3>Кабельні системи</h3><p>Кабель-канали, гофровані труби, кріплення та аксесуари для організації електромереж.</p></div>
+</div>
+
+<div class="row rev">
+<div class="ph"><img src="images/04_klemy.png" alt="Клеми та з’єднувачі для електромонтажу" loading="lazy"></div>
+<div class="tx"><div class="no">1.4</div><h3>Електромонтажні комплектуючі</h3><p>Клеми, з’єднувачі, монтажні аксесуари та супутня продукція для професійного електромонтажу.</p></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="brands">
+<div class="wrap">
+<div class="eyebrow"><b>02</b>Перевірені бренди</div>
+<h2 class="h2">Впевненість у результаті</h2>
+<p class="lead">Орієнтуємося на продукцію виробників із багаторічною історією, усталеною репутацією та перевіреними технічними рішеннями — українських і міжнародних.</p>
+<div class="chips">
+<span>SOKOL</span><span>PLANK</span><span>АСКО-УКРЕМ</span><span>WAGO</span><span>ZUBR</span><span>Hager</span><span>Schneider Electric</span><span>Siemens</span><span>ЗЗЦМ</span>
+</div>
+<p class="note">Перелік брендів і доступність конкретних позицій уточнюйте під час замовлення.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="eyebrow"><b>03</b>Наші принципи</div>
+<h2 class="h2">Відповідальний підхід на кожному етапі</h2>
+<div class="pri">
+<div><div class="num">01</div><h3>Гарантія якості від постачальника</h3><p>Перевірені канали постачання та гарантійні зобов’язання відповідно до умов виробника.</p></div>
+<div><div class="num">02</div><h3>Співпраця з професіоналами</h3><p>Розуміємо вимоги електромонтажних організацій, будівельних компаній, підрядників і торговельних підприємств.</p></div>
+<div><div class="num">03</div><h3>Репутація, підтверджена роками</h3><p>Перевага виробникам і рішенням із тривалою історією використання в галузі.</p></div>
+<div><div class="num">04</div><h3>Професійний підбір обладнання</h3><p>Допомагаємо підібрати продукцію відповідно до технічних вимог і специфікацій об’єкта.</p></div>
+</div>
+</div>
+</section>
+
+<section class="partner">
+<div class="wrap">
+<div>
+<div class="eyebrow"><b>04</b>Надійний партнер</div>
+<h2 class="h2">Надійність електромережі починається з якості кожного її компонента</h2>
+<p>Наша робота ґрунтується на відповідальному виборі постачальників, професійній консультації та довгостроковій співпраці. Від окремих електромонтажних робіт до комплексного забезпечення будівельних об’єктів — допомагаємо знайти перевірені рішення для кожного завдання.</p>
+</div>
+<div class="ph"><img src="images/05_sklad.png" alt="Склад електротехнічної продукції" loading="lazy"></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<div>
+<div class="eyebrow"><b>05</b>Контакти</div>
+<h2 class="h2">Підберемо продукцію під ваш об’єкт</h2>
+<p>Надішліть специфікацію або опишіть задачу — підкажемо перевірені рішення, доступні бренди та орієнтовні строки постачання.</p>
+</div>
+<div class="acts">
+<a class="btn cu" href="tel:+380935360796"><span>Зателефонувати<small>093 536 07 96</small></span></a>
+<a class="btn" href="viber://chat?number=%2B380935360796"><span>Viber<small>написати</small></span></a>
+<a class="btn" href="https://t.me/+380935360796" target="_blank" rel="noopener"><span>Telegram<small>написати</small></span></a>
+<a class="btn" href="mailto:cibartvictoria@ukr.net"><span>E-mail<small>cibartvictoria@ukr.net</small></span></a>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div><strong>ФОП ЦИБАРТ ВІКТОРІЯ ЮРІЇВНА</strong>Електротехнічна продукція від перевірених виробників.</div>
+<div><strong>Реквізити</strong>РНОКПП: 3089608323<br>49000, Дніпропетровська обл., м. Дніпро,<br>вул. Звивиста, буд. 58, кв. 10</div>
+<div><strong>Контакти</strong><a href="tel:+380935360796">093 536 07 96</a><br><a href="mailto:cibartvictoria@ukr.net">cibartvictoria@ukr.net</a></div>
+</div></footer>
+</body>
+</html>
