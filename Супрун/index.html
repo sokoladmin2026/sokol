@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОП Супрун І. В. — Електротехнічна продукція. Оптові та роздрібні поставки</title>
+<meta name="description" content="Електротехнічна продукція для ринків, магазинів, монтажних організацій та бригад. Кабель, автоматика, кабельні системи та електромонтажні матеріали. Оперативне постачання.">
+<meta name="theme-color" content="#122033">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#242B36;--steel:#4E5A6B;--mute:#636F80;--paper:#EDEFF1;--card:#F7F8F9;--cu:#8FA0B3;--cu-d:#687787;--line:#D5D9DD}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.65 "Work Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.14;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cu);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.tag{display:inline-flex;align-items:center;gap:10px;font:600 13px "Work Sans";letter-spacing:.14em;text-transform:uppercase;color:var(--cu-d)}
+.tag:before{content:"";width:28px;height:2px;background:var(--cu)}
+.h2{font-size:clamp(27px,3.3vw,42px);margin-top:14px;max-width:18em}
+.lead{max-width:36em;color:var(--mute);margin-top:16px;font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:14px 24px;font-weight:600;text-decoration:none;border:1px solid var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(18,32,51,.4)}
+.btn.cu{background:var(--cu);border-color:var(--cu);color:#fff}
+.btn.lt{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+header{position:sticky;top:0;z-index:5;background:rgba(18,32,51,.95);backdrop-filter:blur(8px);color:#fff}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;gap:16px}
+.logo{font:600 16px "Space Grotesk";text-decoration:none}
+.logo b{color:var(--cu)}
+header a.tel{background:var(--cu);color:#fff;padding:9px 18px;text-decoration:none;font:600 14px "Work Sans"}
+/* hero */
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:74px 24px 0}
+.hero .tag{color:var(--cu)}
+.hero h1{font-size:clamp(32px,4.5vw,52px);margin-top:20px}
+.hero p{margin:22px 0 10px;max-width:30em;color:#C3C9D4;font-size:18px}
+.hero .note{color:#8C97A8;font-size:15px;margin-bottom:30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .ph{position:relative;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.14)}
+.hero .ph img{width:100%;height:100%;object-fit:cover;display:block}
+section{padding:92px 0}
+/* clients grid */
+.cgrid{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.ccard{background:var(--card);display:flex;flex-direction:column}
+.ccard .ph{aspect-ratio:4/3;overflow:hidden}
+.ccard .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.ccard:hover .ph img{transform:scale(1.05)}
+.ccard .tx{padding:22px 20px 26px;flex:1}
+.ccard h3{font-size:18px;margin-bottom:8px}
+.ccard p{color:var(--mute);font-size:14.5px}
+/* products */
+.pgrid{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.pcard{background:var(--card);min-height:300px;display:flex;flex-direction:column}
+.pcard .ph{aspect-ratio:4/3;overflow:hidden}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pcard.noph{justify-content:center}
+.pcard .tx{padding:24px 22px;flex:1}
+.pcard h3{font-size:18px;margin-bottom:8px}
+.pcard p{color:var(--mute);font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chips span{border:1px solid var(--line);background:var(--card);padding:10px 18px;font:500 14.5px "Work Sans"}
+.note-sm{margin-top:24px;color:var(--mute);font-size:14.5px;max-width:34em}
+/* benefits */
+.benefits{background:var(--ink);color:#fff}
+.benefits .h2{color:#fff}
+.benefits .lead{color:#AEB8C6}
+.bgrid{margin-top:46px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.16)}
+.bgrid div{padding:28px 24px 0;border-right:1px solid rgba(255,255,255,.16)}
+.bgrid div:last-child{border-right:0}
+.bgrid .num{font:600 15px "Space Grotesk";color:var(--cu)}
+.bgrid h3{font-size:17px;margin:12px 0 8px}
+.bgrid p{color:#AEB8C6;font-size:15px}
+/* steps timeline */
+.steps{margin-top:54px;position:relative}
+.strack{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.strack:before{content:"";position:absolute;top:19px;left:4%;right:4%;height:2px;background:var(--line)}
+.step{position:relative;padding:0 16px;text-align:left}
+.step .dot{width:40px;height:40px;border-radius:50%;background:var(--card);border:2px solid var(--cu);display:flex;align-items:center;justify-content:center;font:600 16px "Space Grotesk";color:var(--cu-d);position:relative;z-index:1;margin-bottom:18px}
+.step h3{font-size:16.5px;margin-bottom:8px}
+.step p{color:var(--mute);font-size:14px}
+/* delivery banner */
+.band{position:relative;min-height:320px;display:flex;align-items:center}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,32,51,.92),rgba(18,32,51,.55))}
+.band .wrap{position:relative;z-index:1;color:#fff}
+.band h2{color:#fff;max-width:14em}
+.band p{color:#C3C9D4;margin-top:14px;max-width:28em}
+/* contact */
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact .tag{color:var(--cu);justify-content:center}
+.contact .h2{color:#fff;margin-left:auto;margin-right:auto}
+.contact .lead{color:#AEB8C6;margin-left:auto;margin-right:auto}
+.bigphone{display:block;margin:38px 0 10px;font:700 clamp(34px,6vw,64px) "Space Grotesk";color:var(--cu);text-decoration:none;letter-spacing:-.01em}
+.contact .mail{color:#AEB8C6;text-decoration:none;border-bottom:1px solid #566}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
+footer{background:#0D1826;color:#9BA6B5;padding:42px 0;font-size:14.5px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer strong{display:block;color:#fff;margin-bottom:6px;font-family:"Space Grotesk";font-weight:600}
+footer a{text-decoration:none;border-bottom:1px solid #445}
+@media(max-width:900px){
+.hero .wrap,.band .wrap,footer .wrap{grid-template-columns:1fr}
+.cgrid,.pgrid{grid-template-columns:1fr 1fr}
+.bgrid{grid-template-columns:1fr 1fr}
+.bgrid div{border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:20px}
+.bgrid div:nth-child(2n){border-right:0}
+.strack{grid-template-columns:1fr;gap:26px}
+.strack:before{display:none}
+section{padding:60px 0}
+header .logo span{display:none}
+}
+@media(max-width:560px){.cgrid,.pgrid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">ФОП Супрун <b>І. В.</b></a>
+<a class="tel" href="tel:+380637666171">Зателефонувати</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="tag">Електротехнічна продукція</div>
+<h1>Ваш надійний партнер у світі електротехніки</h1>
+<p>Від невеликої торгової точки до масштабного будівельного об’єкта — забезпечуємо електротехнічною продукцією кожного, хто її потребує. Допомагаємо з підбором обладнання та організовуємо постачання в найкоротші терміни.</p>
+<p class="note">Ваші завдання — наші рішення.</p>
+<div class="cta">
+<a class="btn cu" href="#contact">Залишити заявку</a>
+<a class="btn lt" href="#clients">Як працюємо</a>
+</div>
+</div>
+<div class="ph"><img src="images/01_sklad.png" alt="Склад електротехнічної продукції"></div>
+</div></div>
+
+<section id="clients">
+<div class="wrap">
+<div class="tag">Працюємо з кожним</div>
+<h2 class="h2">Підтримуємо кожного — незалежно від масштабу бізнесу</h2>
+<p class="lead">Розуміємо потреби кожного клієнта та пропонуємо рішення відповідно до його завдань.</p>
+<div class="cgrid">
+<div class="ccard"><div class="ph"><img src="images/02_rynok.png" alt="Торгова точка на ринку з електротоварами" loading="lazy"></div><div class="tx"><h3>Ринки та торгові точки</h3><p>Допомагаємо підтримувати асортимент, швидко поповнювати запаси та знаходити затребувану продукцію.</p></div></div>
+<div class="ccard"><div class="ph"><img src="images/03_magazyn.png" alt="Стелажі спеціалізованого магазину електротоварів" loading="lazy"></div><div class="tx"><h3>Спеціалізовані магазини</h3><p>Забезпечуємо регулярне постачання, допомагаємо розширювати асортимент і підбирати аналоги.</p></div></div>
+<div class="ccard"><div class="ph"><img src="images/04_montazhna_organizatsiya.png" alt="Монтажна організація працює з розподільчим щитом" loading="lazy"></div><div class="tx"><h3>Монтажні організації</h3><p>Комплектуємо об’єкти матеріалами за специфікаціями, допомагаємо дотримуватися графіків робіт.</p></div></div>
+<div class="ccard"><div class="ph"><img src="images/05_montazhna_brygada.png" alt="Електромонтажник прокладає кабельну трасу" loading="lazy"></div><div class="tx"><h3>Окремі монтажні бригади</h3><p>Допоможемо підібрати продукцію, знайти потрібне та організувати постачання без затримок.</p></div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="tag">Все необхідне для вашої роботи</div>
+<h2 class="h2">Від кабельної продукції до модульної автоматики</h2>
+<p class="lead">Комплексний підхід до забезпечення електротехнічними матеріалами.</p>
+<div class="pgrid">
+<div class="pcard"><div class="ph"><img src="images/06_kabel.png" alt="Силові кабелі різних перерізів" loading="lazy"></div><div class="tx"><h3>Кабельно-провідникова продукція</h3><p>Силові кабелі, проводи та супутні матеріали.</p></div></div>
+<div class="pcard"><div class="ph"><img src="images/07_gofra_kabel_kanal.png" alt="Гофровані труби та кабель-канали" loading="lazy"></div><div class="tx"><h3>Кабельні системи</h3><p>Гофровані труби, кабель-канали, кріплення та аксесуари.</p></div></div>
+<div class="pcard"><div class="ph"><img src="images/01_avtomatyka.png" alt="Модульна автоматика" loading="lazy"></div><div class="tx"><h3>Модульна автоматика</h3><p>Автоматичні вимикачі, ПЗВ, диференційні автомати та обладнання для захисту електромереж.</p></div></div>
+<div class="pcard"><div class="ph"><img src="images/04_klemy.png" alt="Електромонтажні матеріали" loading="lazy"></div><div class="tx"><h3>Електромонтажні матеріали</h3><p>Клеми, з’єднувачі, монтажні коробки та витратні матеріали.</p></div></div>
+</div>
+<p class="tag" style="margin-top:50px">Продукція провідних брендів</p>
+<div class="chips">
+<span>SOKOL</span><span>PLANK</span><span>АСКО-УКРЕМ</span><span>WAGO</span><span>ZUBR</span><span>Hager</span><span>Schneider Electric</span><span>Siemens</span><span>Eaton</span><span>ЗЗЦМ</span><span>NIK</span><span>ARDIC</span>
+</div>
+<p class="note-sm">Асортимент і наявність конкретних позицій уточнюйте під час замовлення.</p>
+</div>
+</section>
+
+<section class="benefits">
+<div class="wrap">
+<div class="tag" style="color:var(--cu)">Не просто постачаємо</div>
+<h2 class="h2">Допомагаємо працювати, а не лише відвантажуємо товар</h2>
+<div class="bgrid">
+<div><div class="num">01</div><h3>Професійні консультації</h3><p>Допомагаємо розібратися в асортименті та підібрати обладнання за технічними характеристиками.</p></div>
+<div><div class="num">02</div><h3>Оперативне виконання</h3><p>Простій бригади чи відсутність товару — втрачені можливості. Швидкість для нас у пріоритеті.</p></div>
+<div><div class="num">03</div><h3>Комплексне забезпечення</h3><p>Збираємо все необхідне в одному замовленні — від кабелю й гофри до автоматики та дрібних комплектуючих.</p></div>
+<div><div class="num">04</div><h3>Без зайвої бюрократії</h3><p>Працюємо як із великими організаціями, так і з невеликими точками та приватними бригадами.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="tag">Від запиту до готового замовлення</div>
+<h2 class="h2">П’ять кроків до вашого замовлення</h2>
+<div class="steps"><div class="strack">
+<div class="step"><div class="dot">1</div><h3>Надсилаєте запит</h3><p>Перелік товарів, специфікацію, технічне завдання або просто описуєте, що потрібно.</p></div>
+<div class="step"><div class="dot">2</div><h3>Отримуєте консультацію</h3><p>Уточнюємо потреби, перевіряємо наявність, за потреби підбираємо альтернативи.</p></div>
+<div class="step"><div class="dot">3</div><h3>Узгоджуємо пропозицію</h3><p>Формуємо замовлення, погоджуємо вартість, кількість і терміни постачання.</p></div>
+<div class="step"><div class="dot">4</div><h3>Організовуємо постачання</h3><p>Забезпечуємо оперативне відвантаження та доставку на погоджених умовах.</p></div>
+<div class="step"><div class="dot">5</div><h3>Залишаємося на зв’язку</h3><p>Консультуємо щодо наступних замовлень і допомагаємо з подальшим забезпеченням.</p></div>
+</div></div>
+</div>
+</section>
+
+<div class="band">
+<img src="images/09_dostavka.png" alt="Завантаження продукції у вантажний автомобіль" loading="lazy">
+<div class="wrap">
+<h2 class="h2">Постійний партнер для щоденних завдань</h2>
+<p>Будуємо співпрацю на взаємній довірі, відповідальності та розумінні потреб кожного партнера.</p>
+</div>
+</div>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="tag">Потрібна електротехніка? Звертайтеся!</div>
+<h2 class="h2">Надішліть перелік необхідної продукції — підготуємо пропозицію</h2>
+<p class="lead">Допоможемо з підбором і узгодимо найкоротші можливі терміни постачання.</p>
+<a class="bigphone" href="tel:+380637666171">063 766 61 71</a>
+<a class="mail" href="mailto:fop.syprun@gmail.com">fop.syprun@gmail.com</a>
+<div class="cta-row">
+<a class="btn cu" href="tel:+380637666171">Зателефонувати</a>
+<a class="btn lt" href="viber://chat?number=%2B380637666171">Viber</a>
+<a class="btn lt" href="https://t.me/+380637666171" target="_blank" rel="noopener">Telegram</a>
+<a class="btn lt" href="mailto:fop.syprun@gmail.com">E-mail</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<div><strong>ФОП СУПРУН ІННА В’ЯЧЕСЛАВІВНА</strong>Оптове та роздрібне постачання електротехнічної продукції.</div>
+<div><strong>Реквізити</strong>РНОКПП: 2376212405<br>51600, Дніпропетровська обл., Верхньодніпровський р-н,<br>м. Верхньодніпровськ, вул. Сергія Яцковського, буд. 19, кв. 12</div>
+<div><strong>Контакти</strong><a href="tel:+380637666171">063 766 61 71</a><br><a href="mailto:fop.syprun@gmail.com">fop.syprun@gmail.com</a></div>
+</div></footer>
+</body>
+</html>
