@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Електротехніка, яка не затримує ваш об’єкт — ФОП Гутаров І. І.</title>
+<meta name="description" content="Постачання електротехнічної продукції для монтажних організацій, підрядників, будівельних компаній та промислових об’єктів. Склади по всій Україні, співпраця з виробниками, швидка доставка на об’єкт.">
+<meta name="theme-color" content="#1d1e20">
+<meta property="og:title" content="Електротехніка, яка не затримує ваш об’єкт">
+<meta property="og:description" content="Потрібне обладнання — є. Потрібна доставка — буде. Склади по всій Україні, швидка доставка на об’єкт.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --graphite:#1d1e20;
+  --graphite-2:#2a2c2f;
+  --concrete:#e9e8e3;
+  --concrete-2:#dddcd6;
+  --paper:#f6f5f1;
+  --yellow:#ffc400;
+  --yellow-dark:#e0ab00;
+  --ink:#1d1e20;
+  --muted:#5d5f63;
+  --muted-light:#b4b6ba;
+  --radius:14px;
+  --wrap:1200px;
+  --pad:clamp(20px,4vw,40px);
+  --section:clamp(56px,9vw,112px);
+  --font-body:"Onest","Segoe UI",Roboto,Arial,sans-serif;
+  --font-head:"Unbounded","Onest","Segoe UI",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:clamp(16px,1.05vw + 12px,18px);
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--font-head);font-weight:700;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(28px,4.4vw,56px)}
+h2{font-size:clamp(24px,3.2vw,40px)}
+h3{font-size:clamp(16px,1.4vw,19px);line-height:1.3;letter-spacing:0}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.section{padding:var(--section) 0}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  min-height:52px;padding:0 26px;
+  font:600 1rem/1 var(--font-body);
+  text-decoration:none;
+  border-radius:999px;border:2px solid transparent;
+  transition:background-color .2s,color .2s,border-color .2s,transform .2s;
+  cursor:pointer;white-space:nowrap;
+}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--yellow);color:var(--ink)}
+.btn-primary:hover{background:var(--yellow-dark)}
+.btn-ghost{border-color:currentColor;color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn-dark{background:var(--graphite);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-ghost-dark{border-color:var(--ink);color:var(--ink)}
+.btn-ghost-dark:hover{background:var(--ink);color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- header ---------- */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(29,30,32,.94);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;line-height:1.2}
+.brand-mark{
+  width:34px;height:34px;flex:none;border-radius:8px;background:var(--yellow);color:var(--ink);
+  display:grid;place-items:center;
+}
+.brand-mark svg{width:20px;height:20px}
+.brand small{display:block;font-weight:400;font-size:.78rem;color:var(--muted-light)}
+.nav{display:none;gap:28px}
+.nav a{text-decoration:none;font-weight:500;color:var(--muted-light);transition:color .2s}
+.nav a:hover{color:#fff}
+.header .btn{min-height:44px;padding:0 20px}
+.header .btn span.long{display:none}
+@media (min-width:640px){.header .btn span.long{display:inline}}
+@media (min-width:960px){.nav{display:flex}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--graphite);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr}
+.hero-photo{position:relative;aspect-ratio:4/3;order:-1}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(to top,var(--graphite),transparent)}
+.hero-copy{padding:8px var(--pad) 48px;position:relative}
+.hero-copy .org{margin:0 0 18px;color:var(--yellow);font-weight:600;font-size:.95rem}
+.hero-copy h1{margin-bottom:20px}
+.hero-sub{
+  font-family:var(--font-head);font-weight:600;
+  font-size:clamp(17px,1.9vw,22px);line-height:1.35;
+  margin:0 0 20px;max-width:28ch;
+}
+.hero-sub span{color:var(--yellow)}
+.hero-lead{color:var(--muted-light);margin-bottom:28px}
+.hero-facts{
+  list-style:none;margin:36px 0 0;padding:0;
+  display:grid;gap:14px;
+}
+.hero-facts li{
+  padding-left:16px;border-left:3px solid var(--yellow);
+  font-weight:500;line-height:1.35;
+}
+@media (min-width:600px){
+  .hero-facts{grid-template-columns:repeat(3,1fr);gap:20px}
+}
+@media (min-width:960px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:calc(100vh - 68px);max-height:860px;align-items:stretch}
+  .hero-photo{order:0;aspect-ratio:auto;height:100%}
+  .hero-photo::after{
+    inset:0;height:auto;
+    background:linear-gradient(to right,var(--graphite) 0%,rgba(29,30,32,0) 38%);
+  }
+  .hero-copy{
+    padding:72px 24px 72px max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));
+    display:flex;flex-direction:column;justify-content:center;z-index:2;
+  }
+  .hero-facts{grid-template-columns:1fr;margin-top:44px}
+}
+@media (min-width:1200px){
+  .hero-facts{grid-template-columns:repeat(3,1fr)}
+}
+
+/* hazard tape divider */
+.tape{
+  height:16px;
+  background:repeating-linear-gradient(-45deg,var(--yellow) 0 18px,var(--graphite) 18px 36px);
+}
+
+/* ---------- split block ---------- */
+.split{display:grid;gap:36px;align-items:center}
+.split-photo{border-radius:var(--radius);overflow:hidden;background:var(--concrete-2)}
+.split-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .split{grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px)}
+  .split.reverse .split-photo{order:-1}
+}
+
+/* ---------- time pressure ---------- */
+.pressure{background:var(--paper)}
+.pressure .split-photo{aspect-ratio:4/3}
+@media (min-width:900px){.pressure .split-photo{aspect-ratio:4/4.6}}
+.pressure h2{margin-bottom:24px}
+.pressure .scene{color:var(--muted)}
+.mission{
+  margin-top:28px;padding:24px 26px;
+  background:var(--yellow);border-radius:var(--radius);
+}
+.mission strong.t{display:block;font-family:var(--font-head);font-size:clamp(18px,2vw,24px);margin-bottom:10px;line-height:1.2}
+.mission p{margin:0;font-weight:500}
+
+/* ---------- logistics ---------- */
+.logistics{background:var(--concrete)}
+.section-head{margin-bottom:clamp(28px,4vw,48px);max-width:760px}
+.section-head h2{margin-bottom:16px}
+.section-head p{color:var(--muted);margin:0}
+.logistics .split-photo{aspect-ratio:3/4;max-height:640px}
+.features{display:grid;gap:0}
+.feature{padding:22px 0;border-top:2px solid var(--ink)}
+.feature:first-child{border-top-color:var(--yellow);border-top-width:4px}
+.feature h3{margin-bottom:8px}
+.feature p{margin:0;color:var(--muted);font-size:.95em}
+@media (min-width:560px){
+  .features{grid-template-columns:1fr 1fr;column-gap:32px}
+  .feature:nth-child(2){border-top-color:var(--yellow);border-top-width:4px}
+}
+@media (min-width:900px){
+  .logistics .split{grid-template-columns:5fr 7fr}
+  .logistics .split-photo{aspect-ratio:auto;height:100%;min-height:480px;max-height:none}
+}
+
+/* ---------- products ---------- */
+.products{background:var(--paper)}
+.products-layout{display:grid;gap:clamp(28px,4vw,48px)}
+.products-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2;background:var(--concrete-2)}
+.products-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.plist{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.plist li{
+  display:grid;gap:6px;
+  padding:20px 0 20px 22px;
+  border-bottom:1px solid var(--concrete-2);
+  position:relative;
+}
+.plist li::before{
+  content:"";position:absolute;left:0;top:26px;
+  width:10px;height:10px;background:var(--yellow);border-radius:2px;
+}
+.plist h3{font-size:clamp(16px,1.5vw,19px)}
+.plist p{margin:0;color:var(--muted);font-size:.95em}
+@media (min-width:700px){
+  .products-photo{aspect-ratio:2/1}
+}
+@media (min-width:1000px){
+  .plist li{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:8px 32px;align-items:baseline}
+}
+
+/* ---------- request ---------- */
+.request{background:var(--graphite);color:#fff}
+.request .split-photo{aspect-ratio:4/3;position:relative}
+.crop-right{background-image:url("images/05_EATON_Schneider.png");background-size:200% 100%;background-position:100% 50%;background-repeat:no-repeat}
+.crop-left{background-image:url("images/05_EATON_Schneider.png");background-size:200% 100%;background-position:0 50%;background-repeat:no-repeat}
+.request h2{margin-bottom:20px}
+.request .lead{color:var(--muted-light)}
+.request .lead strong{color:#fff;font-weight:600}
+.steps{list-style:none;counter-reset:s;margin:28px 0 32px;padding:0;display:grid;gap:14px}
+.steps li{
+  counter-increment:s;position:relative;
+  padding:2px 0 2px 56px;line-height:1.45;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:0;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--yellow);color:var(--ink);
+  display:grid;place-items:center;
+  font:700 1rem/1 var(--font-head);
+}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--muted-light);font-size:.95em}
+.request .closing{font-family:var(--font-head);font-weight:600;font-size:clamp(16px,1.6vw,20px);line-height:1.35;margin:0 0 28px;color:var(--yellow)}
+@media (min-width:900px){
+  .request .split-photo{aspect-ratio:auto;min-height:560px;height:100%}
+}
+
+/* ---------- audience ---------- */
+.audience{background:var(--concrete)}
+.audience-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2;margin-bottom:clamp(28px,4vw,48px);background:var(--concrete-2)}
+.audience-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+@media (min-width:900px){.audience-photo{aspect-ratio:21/9}}
+.audience-grid{display:grid;gap:36px}
+@media (min-width:900px){.audience-grid{grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:start}}
+.audience h2{margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px;padding:0;list-style:none}
+.chips li{padding:9px 16px;background:#fff;border-radius:999px;font-weight:500;font-size:.95em;border:1px solid var(--concrete-2)}
+.audience .note{color:var(--muted);margin-bottom:0}
+.contrast{display:grid;gap:14px}
+.contrast div{padding:24px 26px;border-radius:var(--radius);font-family:var(--font-head);font-weight:600;font-size:clamp(17px,1.9vw,23px);line-height:1.3}
+.contrast .a{background:transparent;border:2px dashed #9b9c9f;color:#6b6d71}
+.contrast .b{background:var(--ink);color:#fff;border:2px solid var(--ink)}
+.contrast .b em{font-style:normal;color:var(--yellow)}
+.contrast small{display:block;font-family:var(--font-body);font-weight:500;font-size:.78rem;margin-bottom:8px;opacity:.8}
+
+/* ---------- final cta ---------- */
+.cta{background:var(--yellow);color:var(--ink);text-align:center}
+.cta h2{max-width:20ch;margin:0 auto 20px}
+.cta p{margin:0 auto 32px;max-width:46ch;font-weight:500}
+.cta .btn-row{justify-content:center}
+
+/* ---------- footer ---------- */
+.footer{background:var(--graphite);color:var(--muted-light);padding:clamp(40px,6vw,64px) 0 32px}
+.footer-grid{display:grid;gap:32px}
+@media (min-width:800px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:48px}}
+.footer h3{color:#fff;font-family:var(--font-body);font-size:1rem;margin-bottom:12px;font-weight:600}
+.footer p{margin:0 0 6px;max-width:none;font-size:.95rem}
+.footer .name{color:#fff;font-weight:600;font-size:1.05rem}
+.footer a{text-decoration:none;color:#fff}
+.footer a:hover{color:var(--yellow)}
+.footer-bottom{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.85rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* ---------- mobile sticky bar ---------- */
+.mbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
+  background:rgba(29,30,32,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.mbar .btn{flex:1;min-height:48px;padding:0 14px}
+.mbar .btn-ghost{color:#fff}
+body{padding-bottom:70px}
+@media (min-width:800px){
+  .mbar{display:none}
+  body{padding-bottom:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="На початок сторінки">
+      <span>ФОП Гутаров І. І.<small>Електротехнічна продукція</small></span>
+    </a>
+    <nav class="nav" aria-label="Розділи сторінки">
+      <a href="#supply">Постачання</a>
+      <a href="#products">Що постачаємо</a>
+      <a href="#request">Заявка</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+    <a class="btn btn-primary" href="tel:+380637666170">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="long">Зателефонувати</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-photo">
+      <img src="images/02_montazhnik_brendy.png" width="1536" height="1024" alt="Усміхнений монтажник з бухтою гофротруби на будівельному майданчику показує великий палець угору">
+    </div>
+    <div class="hero-copy">
+      <p class="org">ФОП Гутаров Іван Іванович</p>
+      <h1>Електротехніка, яка не затримує ваш об’єкт</h1>
+      <p class="hero-sub">Потрібне обладнання — є.<br><span>Потрібна доставка — буде.</span></p>
+      <p class="hero-lead">Постачання електротехнічної продукції для монтажних організацій, підрядників, будівельних компаній та промислових об’єктів.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:+380637666170">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Зателефонувати
+        </a>
+        <a class="btn btn-ghost" href="mailto:gutarov342@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Написати на пошту
+        </a>
+      </div>
+      <ul class="hero-facts">
+        <li>Склади по всій Україні</li>
+        <li>Співпраця з виробниками</li>
+        <li>Швидка доставка на об’єкт</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="tape" aria-hidden="true"></div>
+
+<!-- ============ TIME PRESSURE ============ -->
+<section class="section pressure">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>Коли об’єкт працює — чекати ніколи</h2>
+        <p class="scene" style="margin-top:24px">Монтаж уже почався. Люди на об’єкті. Строки йдуть.</p>
+        <p class="scene">І саме в цей момент з’ясовується, що потрібної автоматики немає, кабелю не вистачає, а постачальник обіцяє відвантаження «наступного тижня».</p>
+        <div class="mission">
+          <strong class="t">Ми працюємо інакше.</strong>
+          <p>Наша задача — не просто продати електротехніку, а максимально швидко закрити потребу об’єкта та організувати поставку туди, де вона потрібна.</p>
+        </div>
+      </div>
+      <div class="split-photo">
+        <img src="images/03_electrician_WAGO.png" width="1536" height="1024" loading="lazy" alt="Електрик збирає розподільчий щит із модульною автоматикою" style="object-position:55% 50%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGISTICS ============ -->
+<section class="section logistics" id="supply">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Постачання по всій Україні</h2>
+      <p>Розгалужена складська логістика дозволяє швидко знаходити потрібні позиції та скорочувати час між замовленням і отриманням товару.</p>
+    </div>
+    <div class="split reverse">
+      <div class="split-photo crop-left" role="img" aria-label="Монтажник з бухтою гофротруби біля коробок із продукцією на будівельному майданчику"></div>
+      <div class="features">
+        <div class="feature">
+          <h3>Склади по Україні</h3>
+          <p>Шукаємо продукцію максимально близько до вашого об’єкта та формуємо оперативне відвантаження.</p>
+        </div>
+        <div class="feature">
+          <h3>Пряма робота з виробниками</h3>
+          <p>Співпрацюємо з виробниками та офіційними каналами постачання. Це дає доступ до широкого асортименту та можливість швидко закривати нестандартні заявки.</p>
+        </div>
+        <div class="feature">
+          <h3>Доставка безпосередньо на об’єкт</h3>
+          <p>Не потрібно будувати складну логістику самостійно. Організовуємо доставку на будівельний, монтажний або виробничий майданчик.</p>
+        </div>
+        <div class="feature">
+          <h3>Комплексна комплектація</h3>
+          <p>Одна заявка може включати десятки різних позицій. Збираємо їх у комплексне постачання, щоб вам не доводилося шукати кожну групу товару окремо.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Що постачаємо</h2>
+    </div>
+    <div class="products-layout">
+      <ul class="plist">
+        <li>
+          <h3>Модульна автоматика</h3>
+          <p>Автоматичні вимикачі, ПЗВ, диференційні автомати, контактори, реле та інше обладнання для розподільчих систем.</p>
+        </li>
+        <li>
+          <h3>Кабель та провід</h3>
+          <p>Кабельно-провідникова продукція для житлового, комерційного, промислового будівництва та монтажних робіт.</p>
+        </li>
+        <li>
+          <h3>Гофротруба та труба для електромонтажу</h3>
+          <p>Рішення для прокладання та захисту кабельних трас на об’єктах різного масштабу.</p>
+        </li>
+        <li>
+          <h3>Кабель-канал</h3>
+          <p>Кабельні короби та комплектуючі для організації відкритої електропроводки.</p>
+        </li>
+        <li>
+          <h3>Щитове обладнання</h3>
+          <p>Корпуси, бокси, шафи та комплектуючі для складання електрощитів.</p>
+        </li>
+        <li>
+          <h3>Клеми та з’єднувальні рішення</h3>
+          <p>Клеми, з’єднувачі та інші рішення для швидкого й надійного монтажу електричних з’єднань.</p>
+        </li>
+        <li>
+          <h3>Електромонтажні матеріали</h3>
+          <p>Кріплення, з’єднувальні елементи, аксесуари та витратні матеріали для монтажу.</p>
+        </li>
+      </ul>
+      <div class="products-photo">
+        <img src="images/04_montazhnik_Legrand.png" width="1536" height="1024" loading="lazy" alt="Монтажник встановлює металевий кабельний лоток під стелею">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REQUEST ============ -->
+<section class="section request" id="request">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-photo crop-right" role="img" aria-label="Монтажник робить нотатки за кресленнями, поруч — автоматичні вимикачі"></div>
+      <div>
+        <h2>Ви даєте заявку — ми закриваємо постачання</h2>
+        <p class="lead">Не обов’язково витрачати час на пошук кожної позиції. Надішліть <strong>специфікацію, відомість матеріалів, перелік обладнання або просто заявку</strong>.</p>
+        <ol class="steps">
+          <li><b>Опрацьовуємо заявку</b></li>
+          <li><b>Перевіряємо доступність продукції</b></li>
+          <li><b>Підбираємо позиції та пропонуємо оптимальний варіант постачання</b></li>
+        </ol>
+        <p class="closing">Від однієї позиції до комплексної комплектації об’єкта.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="tel:+380637666170">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+            Зателефонувати
+          </a>
+          <a class="btn btn-ghost" href="mailto:gutarov342@gmail.com?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D1%87%D0%B0%D0%BD%D0%BD%D1%8F">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Надіслати специфікацію
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE ============ -->
+<section class="section audience">
+  <div class="wrap">
+    <div class="audience-photo">
+      <img src="images/montazhniki_pervoe.png" width="1536" height="1024" loading="lazy" alt="Команда електромонтажників в касках на об’єкті показує великі пальці угору">
+    </div>
+    <div class="audience-grid">
+      <div>
+        <h2>Для тих, хто відповідає за строки</h2>
+        <p style="margin-bottom:16px">Ми працюємо з:</p>
+        <ul class="chips">
+          <li>монтажними організаціями</li>
+          <li>електромонтажниками</li>
+          <li>виконробами</li>
+          <li>підрядниками</li>
+          <li>забудовниками</li>
+          <li>виробничими підприємствами</li>
+          <li>сервісними компаніями</li>
+        </ul>
+        <p class="note">Тому добре розуміємо різницю між:</p>
+      </div>
+      <div class="contrast">
+        <div class="a"><small>Одне</small>«товар можна замовити»</div>
+        <div class="b"><small>Інше</small>і <em>«товар потрібен на об’єкті зараз»</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section cta" id="contacts">
+  <div class="wrap">
+    <h2>Нехай монтажники монтують, а не шукають матеріали</h2>
+    <p>Передайте нам список необхідного. Перевіримо наявність, зберемо пропозицію та організуємо поставку.</p>
+    <div class="btn-row">
+      <a class="btn btn-dark" href="tel:+380637666170">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        Зателефонувати: 063-766-61-70
+      </a>
+      <a class="btn btn-ghost-dark" href="mailto:gutarov342@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        gutarov342@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="name">ФОП Гутаров Іван Іванович</p>
+        <p>Електротехнічна продукція • Комплектація об’єктів • Постачання по Україні</p>
+        <p>РНОКПП: 2551816859</p>
+      </div>
+      <div>
+        <h3>Адреса</h3>
+        <p>51600, Дніпропетровська обл., Верхньодніпровський район, м. Верхньодніпровськ, вул. Кирпична, буд. 13</p>
+      </div>
+      <div>
+        <h3>Контакти</h3>
+        <p>Телефон: <a href="tel:+380637666170">063-766-61-70</a></p>
+        <p>E-mail: <a href="mailto:gutarov342@gmail.com">gutarov342@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Склади по Україні • Співпраця з виробниками • Швидка доставка на об’єкт</span>
+      <span>© ФОП Гутаров Іван Іванович</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile contact bar -->
+<div class="mbar">
+  <a class="btn btn-primary" href="tel:+380637666170">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    Подзвонити
+  </a>
+  <a class="btn btn-ghost" href="mailto:gutarov342@gmail.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    Написати
+  </a>
+</div>
+
+</body>
+</html>
